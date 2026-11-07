@@ -1,4 +1,4 @@
-url: "https://plantmachineryvaluation.in"
+rl: "https://plantmachineryvaluation.in"
 title: "Er. Chandan Goyal - IBBI Registered Valuer (P&M)"
 plugins:
   - jekyll-sitemap
@@ -6,3 +6,10 @@ permalink: /articles/:title/
 defaults:
   - scope: {path: "", type: "posts"}
     values: {layout: "post"}
+future: true
+
+# Google Ads tracking: remove the leading # and fill these in AFTER creating conversions in Google Ads.
+# google_ads_id: "AW-123456789"
+# form_label: "AbCdEfGhIjKlMnOp"
+# call_label: "AbCdEfGhIjKlMnOp"
+# whatsapp_label: "AbCdEfGhIjKlMnOp"
