@@ -52,4 +52,4 @@ To prepare an accurate and well-supported plant and machinery valuation report, 
 Please tell us early. Missing documents do not always stop the assignment, but the report will then state clearly which assumptions were made and which information could not be verified. We rely on you to confirm facts about the machinery, since we work from the information you provide and from our inspection.
 
 ## Next steps
-If you need a valuation, see our page on [valuation for IBC](/ibc-valuation/), look at a [sample report format](/sample-report.html), or [send an enquiry](/#enquiry). You can also call us on 9465353872.
+If you need a valuation, look at a [sample report format](/sample-report.html), or [send an enquiry](/#enquiry). You can also call us on 9465353872.
