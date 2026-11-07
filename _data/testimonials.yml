@@ -1,7 +1,9 @@
 # Add real client testimonials here (with the client's written permission).
 # Each one starts with a dash. Keep the spacing exactly as shown.
 # Delete the leading "#" on the lines below to publish an entry.
-#
+- name: "M/s Mittals Green Energy Private Limited"
+  role: "Ghaziabad, Uttar Pradesh"
+  text: "We engaged Er. Chandan Goyal, IBBI Registered Valuer (Plant & Machinery), for a valuation assignment. He conducted the assignment in a highly professional and timely manner. The valuation report was clear, well-structured and technically sound. His coordination throughout the assignment was cooperative and satisfactory. We highly appreciate his professional approach and strongly recommend his empanelment with banks and engagement by other clients."
 # - name: "Client Name"
 #   role: "Company or designation"
 #   text: "What the client said about your work."
