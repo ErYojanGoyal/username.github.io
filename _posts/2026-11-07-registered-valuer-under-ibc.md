@@ -1,6 +1,6 @@
 ---
 title: "Role of a Registered Valuer under the Insolvency and Bankruptcy Code (IBC), 2016"
-description: "How registered valuers estimate fair value and liquidation value in corporate insolvency."
+description: "An overview of the role, responsibilities and professional obligations of a Registered Valuer in determining Fair Value and Liquidation Value under the Insolvency and Bankruptcy Code (IBC), 2016"
 ---
 The Registered Valuer plays a crucial role in the insolvency resolution process under the Insolvency and Bankruptcy Code (IBC), 2016. Valuation provides an independent and objective assessment of the assets of a corporate debtor and supports informed decision-making by stakeholders.
 
