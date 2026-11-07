@@ -1,0 +1,9 @@
+---
+layout: default
+title: Plant & Machinery Valuation Articles
+description: Articles on plant and machinery valuation, IBC fair and liquidation value, and valuation methods by IBBI Registered Valuer Er. Chandan Goyal.
+permalink: /articles.html
+---
+<section><div class="container"><h1 class="section-title">Valuation Articles</h1><div class="grid">
+{% for post in site.posts %}<div class="assignment-card"><small>{{ post.date | date: "%-d %b %Y" }}</small><h2 style="font-size:1.3rem"><a href="{{ post.url }}" style="color:var(--secondary);text-decoration:none">{{ post.title }}</a></h2><p>{{ post.description }}</p><a href="{{ post.url }}">Read article →</a></div>
+{% else %}<p>Articles coming soon.</p>{% endfor %}</div></div></section>

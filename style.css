@@ -1,0 +1,111 @@
+
+        :root {
+            --primary: #008080; 
+            --secondary: #003366; 
+            --whatsapp: #25D366;
+            --light: #f4f7f6;
+            --dark: #333;
+        }
+
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; color: var(--dark); line-height: 1.6; scroll-behavior: smooth; }
+        header { background: #fff; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        
+        .logo { height: 100px; width: auto; }
+
+        .hero { 
+            background: linear-gradient(135deg, #003366, #005f73); 
+            background-size: cover; color: white; padding: 80px 5%; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; text-align: left;
+        }
+        .hero-photo img { width: 300px; border-radius: 15px; border: 4px solid var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        
+        .btn { background: var(--primary); color: white; padding: 14px 28px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 20px; border: none; cursor: pointer; transition: 0.3s; }
+        .btn:hover { background: var(--secondary); }
+
+        .phone-contact {
+            display: inline-flex;
+            flex-direction: column;
+            gap: 2px;
+            margin-top: 22px;
+            padding: 14px 22px;
+            background: #fff;
+            color: var(--secondary);
+            border: 3px solid #25D366;
+            border-radius: 10px;
+            text-decoration: none;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.22);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .phone-contact:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(0,0,0,0.28);
+        }
+        .phone-contact-label {
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        .phone-contact-number {
+            font-size: 2rem;
+            line-height: 1.2;
+            font-weight: 800;
+            letter-spacing: 0.03em;
+        }
+        @media (max-width: 600px) {
+            .phone-contact { padding: 12px 16px; }
+            .phone-contact-number { font-size: 1.65rem; }
+        }
+
+        section { padding: 60px 5%; }
+        .section-title { text-align: center; margin-bottom: 40px; color: var(--secondary); font-size: 2.2rem; }
+        
+        /* Assignments Gallery */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .assignment-card { background: white; padding: 25px; border-radius: 12px; border: 1px solid #ddd; border-bottom: 5px solid var(--primary); transition: 0.3s; }
+        .assignment-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .tag { display: inline-block; background: var(--secondary); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; margin-bottom: 15px; }
+
+        .enquiry-container { background: #fff; padding: 50px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); max-width: 1000px; margin: 0 auto; }
+        input, select, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 1rem; margin-top: 10px; }
+        
+        .whatsapp-float {
+            position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: var(--whatsapp);
+            color: #FFF; border-radius: 50px; text-align: center; font-size: 14px; box-shadow: 2px 5px 15px rgba(0,0,0,0.3); z-index: 100;
+            display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: bold;
+        }
+
+        .qr-image { width: 220px; height: auto; margin: 20px auto; display: block; border: 8px solid white; border-radius: 10px; }
+        
+
+        .main-nav { display: flex; align-items: center; gap: 20px; }
+        .nav-link { text-decoration: none; color: var(--secondary); font-weight: bold; }
+        .main-nav .btn { margin-top: 0; }
+
+        /* Mobile layout */
+        @media (max-width: 700px) {
+            header { flex-direction: column; gap: 10px; padding: 10px 4%; }
+            .logo { height: 60px; }
+            .main-nav { width: 100%; justify-content: center; flex-wrap: wrap; gap: 14px; }
+            .main-nav .btn { padding: 10px 18px; font-size: 0.95rem; }
+            .hero { padding: 40px 5%; text-align: center; flex-direction: column-reverse; }
+            .hero h1 { font-size: 1.6rem; }
+            .hero-photo img { width: 200px; max-width: 70vw; margin-bottom: 10px; }
+            section { padding: 40px 5%; }
+            .section-title { font-size: 1.7rem; }
+            .enquiry-container { padding: 25px 18px; }
+            .whatsapp-float { width: 52px; height: 52px; bottom: 20px; right: 20px; font-size: 11px; }
+        }
+
+        footer { background: var(--secondary); color: white; text-align: center; padding: 30px; }
+    
+.container{max-width:1000px;margin:0 auto}
+.card{background:#fff;padding:25px;border-radius:12px;border:1px solid #ddd}
+.reg{display:inline-block;background:#fff;color:var(--secondary);padding:6px 14px;border-radius:20px;font-weight:700;font-size:.9rem;margin-top:8px}
+details{background:#fff;border:1px solid #ddd;border-radius:8px;padding:14px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700;color:var(--secondary)}
+table{width:100%;border-collapse:collapse;margin:15px 0}th,td{border:1px solid #ccc;padding:8px;text-align:left}th{background:var(--light)}
+.note{background:#fff8e1;border-left:5px solid #f9a825;padding:12px 16px;border-radius:6px;margin-bottom:20px}
+.article{background:#fff;padding:30px;border-radius:12px;margin-bottom:30px}
+.mobile-bar{display:none}
+@media(max-width:700px){.whatsapp-float{display:none}.mobile-bar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:1000}.mobile-bar a{flex:1;text-align:center;padding:14px;color:#fff;font-weight:700;text-decoration:none}.mobile-bar .c{background:var(--secondary)}.mobile-bar .w{background:var(--whatsapp)}body{padding-bottom:52px}table{font-size:.85rem}}
+@media print{header,footer,.mobile-bar,.whatsapp-float,.noprint{display:none}}

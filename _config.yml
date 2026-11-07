@@ -1,0 +1,8 @@
+url: "https://plantmachineryvaluation.in"
+title: "Er. Chandan Goyal - IBBI Registered Valuer (P&M)"
+plugins:
+  - jekyll-sitemap
+permalink: /articles/:title/
+defaults:
+  - scope: {path: "", type: "posts"}
+    values: {layout: "post"}
