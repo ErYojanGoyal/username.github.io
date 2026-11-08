@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":{{ page.title | jsonify }},"description":{{ page.description | jsonify }},"datePublished":"{{ page.date | date_to_xmlschema }}","author":{"@type":"Person","name":"Er. Chandan Goyal"},"mainEntityOfPage":"{{ page.url | prepend: site.url }}"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":{{ page.title | jsonify }},"description":{{ page.description | jsonify }},"datePublished":"{{ page.date | date_to_xmlschema }}","author":{"@type":"Person","name":"Er. Chandan Goyal"},"mainEntityOfPage":"{{ page.url | prepend: "https://plantmachineryvaluation.in" }}"}</script>
 <section><div class="container"><article class="article"><h1>{{ page.title }}</h1>
 <p><small>{{ page.date | date: "%-d %B %Y" }} | By Er. Chandan Goyal, IBBI Registered Valuer (P&amp;M)</small></p>
 {{ content }}
