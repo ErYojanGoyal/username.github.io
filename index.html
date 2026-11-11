@@ -77,7 +77,7 @@ title: Home
             <p>Empanelled as a Plant &amp; Machinery valuer with the following
             {% if emp.size == 1 %}institution{% else %}{{ emp.size }} institutions{% endif %}.</p>
         </div>
-        <div class="morebox" data-item=".emp-card" data-show="4" data-show-m="2"><div class="emp-grid">
+        <div class="morebox" data-item=".emp-card" data-show-m="2"><div class="emp-grid r5">
         {% for e in emp %}
             <div class="emp-card">
                 <div class="emp-top">
@@ -102,13 +102,21 @@ title: Home
 .more-btn{background:#fff;color:#07818b;border:2px solid #087f8c;border-radius:24px;padding:9px 22px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
 .more-btn:hover{background:#087f8c;color:#fff}
 .morebox .is-extra{display:none}
+.morebox{--cols:5;--gap:16px}
+.r5{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--gap)}
+.r5>*{flex:0 0 calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols));box-sizing:border-box;min-width:0;margin:0}
+.r5 .emp-card{padding:18px}.r5 .emp-card h3{font-size:16px}.r5 .emp-card li{font-size:13px;line-height:1.6}
+.r5 .assignment-card{padding:18px}.r5 .assignment-card h3{font-size:17px}.r5 .assignment-card p{font-size:14px}
+.r5-books{--gap:10px}
+@media (max-width:1100px){.morebox{--cols:3}}
+@media (max-width:760px){.morebox{--cols:2}}
+@media (max-width:520px){.morebox{--cols:1}.r5-books{--cols:2}}
 .emp-section{padding:70px 5%;background:#fff;font-family:Arial,sans-serif}
 .emp-container{max-width:1200px;margin:auto}
 .emp-heading{max-width:780px;margin:0 auto 40px;text-align:center}
 .emp-kicker{color:#07818b;font-size:13px;font-weight:800;letter-spacing:2px}
 .emp-heading h2{color:#073b4c;font-size:clamp(28px,4vw,40px);margin:12px 0}
 .emp-heading p{color:#60737a;font-size:16px;line-height:1.8;margin:0}
-.emp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
 .emp-card{background:#f4f8fa;padding:26px;border:1px solid #dce7e9;border-radius:13px;border-top:4px solid #d2a34a}
 .emp-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px}
 .emp-icon{width:46px;height:46px;border-radius:10px;background:#e9f5f5;display:flex;align-items:center;justify-content:center;font-size:24px}
@@ -446,7 +454,7 @@ title: Home
 {% assign asg = site.data.assignments %}{% if asg.size > 0 %}
 <section id="assignments">
     <h2 class="section-title">Recent Assignments</h2>
-    <div class="morebox" data-item=".assignment-card" data-show="6" data-show-m="3" style="max-width:1200px;margin:0 auto"><div class="grid">
+    <div class="morebox" data-item=".assignment-card" data-show-m="3" style="max-width:1200px;margin:0 auto"><div class="r5">
     {% for a in asg %}
         <div class="assignment-card">
             {% if a.tag and a.tag != "" %}<span class="tag">{{ a.tag }}</span>{% endif %}
@@ -524,11 +532,11 @@ title: Home
 <section id="books" class="bk-section">
     <h2 class="bk-title">Books by Er. Chandan Goyal</h2>
     <p class="bk-intro">IBBI Valuation Exam Guide series for registered valuer aspirants. Securities or Financial Assets series co-authored with CA Amit Garg.</p>
-    <div class="morebox" data-item=".bk-card" data-show="4" data-show-m="2">
+    <div class="morebox r5-books" data-item=".bk-card" data-show-m="2">
     {% assign groups = books | group_by: "series" %}
     {% for g in groups %}
         {% if g.name and g.name != "" %}<h3 class="bk-series">{{ g.name }}</h3>{% endif %}
-        <div class="bk-grid">
+        <div class="bk-grid r5">
         {% for b in g.items %}
             {% assign mrp = b.mrp | plus: 0 %}{% assign disc = b.discount | plus: 0 %}
             {% if b.net_price and b.net_price != "" %}{% assign net = b.net_price | plus: 0 %}{% else %}{% assign off = mrp | times: disc | divided_by: 100.0 %}{% assign net = mrp | minus: off | round %}{% endif %}
@@ -555,7 +563,6 @@ title: Home
 .bk-intro{color:#60737a;font-size:14px;text-align:center;margin:0 0 18px}
 .bk-series{color:#073b4c;font-size:14px;font-weight:700;margin:4px 0 8px;text-transform:uppercase;letter-spacing:.5px}
 .bk-grid+.bk-series{margin-top:16px}
-.bk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
 .bk-card{background:#fff;border:1px solid #dce7e9;border-radius:9px;padding:10px 12px;display:flex;flex-direction:column;gap:3px}
 .bk-name{color:#073b4c;font-size:13px;font-weight:700;line-height:1.35}
 .bk-name span{color:#07818b;font-weight:600}
@@ -586,7 +593,7 @@ fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'applicatio
 <script>
 (function(){
 function setup(box){var sel=box.getAttribute('data-item'),items=[].slice.call(box.querySelectorAll(sel)),wrap=box.parentNode.querySelector('.more-wrap');if(!wrap)return;var btn=wrap.querySelector('.more-btn'),open=false;
-function apply(){var n=window.innerWidth<=580?+box.getAttribute('data-show-m'):+box.getAttribute('data-show');items.forEach(function(it,i){it.classList.toggle('is-extra',!open&&i>=n)});
+function apply(){var cols=parseInt(getComputedStyle(box).getPropertyValue('--cols'))||1,n=Math.max(cols,+box.getAttribute('data-show-m')||1);items.forEach(function(it,i){it.classList.toggle('is-extra',!open&&i>=n)});
 box.querySelectorAll('.bk-series').forEach(function(h){var g=h.nextElementSibling;h.classList.toggle('is-extra',!!g&&!g.querySelector(sel+':not(.is-extra)'))});
 wrap.hidden=items.length<=n;btn.textContent=open?'Show less ▴':'View all '+btn.getAttribute('data-total')+' '+btn.getAttribute('data-label')+' ▾'}
 btn.addEventListener('click',function(){open=!open;apply();if(!open)box.scrollIntoView({block:'start',behavior:'smooth'})});window.addEventListener('resize',apply);apply()}
