@@ -1,0 +1,35 @@
+# ------------------------------------------------------------------
+# RECENT ASSIGNMENTS shown on the home page.
+#
+# To add an assignment: copy one block (from "- tag:" to "date:"),
+# paste it at the TOP of the list (newest first) and change the details.
+# Keep the two spaces at the start of each line inside a block.
+#
+#   tag:         Short label, e.g. IBC, Banking, Energy, Manufacturing,
+#                Sale / Purchase, Insurance
+#   title:       Short title, e.g. Dyeing Industry
+#   description: One or two sentences. Do NOT name the client or give
+#                the value unless the client has agreed.
+#   date:        (optional) Month and year, e.g. October 2026 - leave ""
+#                to hide
+# ------------------------------------------------------------------
+
+- tag: "Banking"
+  title: "Dyeing Industry"
+  description: "Prepared a comprehensive Plant & Machinery Valuation Report for a textile dyeing unit to assist in the preparation of its Lender's Independent Engineer (LIE) Report."
+  date: ""
+
+- tag: "Manufacturing"
+  title: "Metal Industry"
+  description: "Successfully completed the valuation of a casting industry unit for sale purposes, providing an independent assessment of its assets and market value."
+  date: ""
+
+- tag: "Insolvency (IBC)"
+  title: "Spinning Unit"
+  description: "Determined Fair and Liquidation Value for asset under liquidation."
+  date: ""
+
+- tag: "Energy"
+  title: "Solar Power Plant"
+  description: "Conducted comprehensive P&M valuation for a large-scale solar power plant for sale purpose."
+  date: ""

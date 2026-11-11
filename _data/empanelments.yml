@@ -1,0 +1,36 @@
+# ------------------------------------------------------------------
+# EMPANELMENTS shown on the home page (section "Empanelments").
+#
+# To add a new empanelment: copy one block below (from "- name:" down
+# to the last line of that block), paste it at the end, and change the
+# details. Keep the two spaces at the start of each line inside a block.
+# Newest first looks best, but any order works.
+#
+#   name:     Bank / institution name (required)
+#   type:     Short label shown as a tag, e.g. Public Sector Bank,
+#             Private Bank, Cooperative Bank, Small Finance Bank, NBFC,
+#             IBC / Insolvency, Court / Tribunal, Government
+#   location: Office or region the empanelment is for
+#   scope:    Asset class or scope of empanelment
+#   since:    Month and year of empanelment, e.g. November 2026
+#   ref:      (optional) Letter reference number - leave empty ("")
+#             if you prefer not to publish it
+#   logo:     (optional) Image file name in the website folder, e.g.
+#             lccb-logo.png - leave empty ("") for no logo
+# ------------------------------------------------------------------
+
+- name: "The Ludhiana Central Cooperative Bank Ltd."
+  type: "Cooperative Bank"
+  location: "Ludhiana – for the branches of the bank"
+  scope: "Plant & Machinery (IBBI Registered Valuer)"
+  since: "November 2026"
+  ref: ""
+  logo: ""
+
+- name: "Capital Small Finance Bank Ltd."
+  type: "Small Finance Bank"
+  location: "Jalandhar – for the branches of the bank"
+  scope: "Plant & Machinery"
+  since: "July 2026"
+  ref: ""
+  logo: ""

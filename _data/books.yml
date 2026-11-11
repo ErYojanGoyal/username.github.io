@@ -1,0 +1,38 @@
+# ------------------------------------------------------------------
+# BOOKS shown on the home page (section "Books by Er. Chandan Goyal").
+#
+# To add a book: copy one block (from "- title:" to "available:"), paste
+# it below the others and change the details. To change a price, just
+# edit the numbers. Keep the two spaces at the start of each line.
+#
+#   title:       Book title (required)
+#   subtitle:    (optional) Edition / volume / asset class
+#   description: Two or three sentences about the book
+#   mrp:         MRP in rupees, numbers only, e.g. 650  (leave "" to show
+#                "Price on request")
+#   discount:    Discount in percent, numbers only, e.g. 20  (0 = no discount)
+#   net_price:   (optional) Leave "" and the website calculates
+#                MRP minus discount automatically. Fill it only if you want
+#                to show a different, exact price.
+#   cover:       (optional) Image file name in the website folder, e.g.
+#                book1-cover.jpg - leave "" for a plain book icon
+#   available:   yes = shows "Buy on WhatsApp" button; no = "Coming soon"
+# ------------------------------------------------------------------
+
+- title: "Valuation Exam Preparation Book – Volume 1"
+  subtitle: "For Registered Valuer aspirants"
+  description: "A structured guide for the valuation examination for registered valuers, covering the common syllabus with concise notes and practice questions."
+  mrp: ""
+  discount: 0
+  net_price: ""
+  cover: ""
+  available: yes
+
+- title: "Plant & Machinery Valuation Guide – Volume 2"
+  subtitle: "Plant & Machinery asset class"
+  description: "A practical guide to plant and machinery valuation, covering approaches, depreciation and obsolescence, and worked examples for the P&M asset class examination and practice."
+  mrp: ""
+  discount: 0
+  net_price: ""
+  cover: ""
+  available: yes
