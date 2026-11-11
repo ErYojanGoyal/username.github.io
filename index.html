@@ -6,7 +6,7 @@ title: Home
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">{% include tracking.html %}
 <title>Plant & Machinery Valuation | IBBI Registered Valuer Punjab</title><meta name="description" content="IBBI registered valuer for plant and machinery valuation in Punjab. Machinery value for sale, purchase, IBC, bank loans and insurance. Call 9465353872."><link rel="canonical" href="https://plantmachineryvaluation.in/">
 <meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#003366"><meta property="og:locale" content="en_IN"><meta property="og:site_name" content="Er. Chandan Goyal - IBBI Registered Valuer"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta property="og:title" content="Plant & Machinery Valuation | IBBI Registered Valuer Punjab"><meta property="og:description" content="IBBI registered valuer for plant and machinery valuation in Punjab. Machinery value for sale, purchase, IBC, bank loans and insurance. Call 9465353872."><meta property="og:url" content="https://plantmachineryvaluation.in/"><meta property="og:image" content="https://plantmachineryvaluation.in/Logo.png">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E⚙️%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/style.css">{% raw %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://plantmachineryvaluation.in/#business","name":"Er. Chandan Goyal - IBBI Registered Valuer (Plant & Machinery)","alternateName":"Goyal Valuers","url":"https://plantmachineryvaluation.in/","logo":"https://plantmachineryvaluation.in/Logo.png","image":"https://plantmachineryvaluation.in/Logo.png","telephone":"+91-9465353872","identifier":"IBBI/RV/06/2025/15844","address":{"@type":"PostalAddress","addressLocality":"Jagraon","addressRegion":"Punjab","addressCountry":"IN"},"areaServed":["Punjab","India"],"description":"IBBI registered valuer for plant and machinery valuation: IBC, bank loans, sale and purchase, insurance and financial reporting.","knowsAbout":["Plant and machinery valuation","Machinery value assessment","Valuation for sale and purchase","IBC fair value and liquidation value","Lender's Independent Engineer valuation"],"founder":{"@type":"Person","name":"Chandan Goyal","jobTitle":"IBBI Registered Valuer (Plant & Machinery)","identifier":"IBBI/RV/06/2025/15844"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Valuation services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Plant and machinery valuation for IBC","url":"https://plantmachineryvaluation.in/ibc-valuation/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Machinery valuation for sale and purchase","url":"https://plantmachineryvaluation.in/machinery-valuation-sale-purchase/"}}]}}</script>{% endraw %}
 {% raw %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a registered valuer?","acceptedAnswer":{"@type":"Answer","text":"A professional enrolled with IBBI for a specific asset class, authorised to carry out valuations required under the Companies Act and the Insolvency and Bankruptcy Code."}},{"@type":"Question","name":"When is plant and machinery valuation required?","acceptedAnswer":{"@type":"Answer","text":"Typically for insolvency and liquidation, bank lending and security, mergers and acquisitions, asset sale or purchase, insurance and financial reporting."}},{"@type":"Question","name":"How is machinery value determined?","acceptedAnswer":{"@type":"Answer","text":"By the machine's make, capacity, age, condition and market demand, usually using the cost approach cross-checked with market evidence."}},{"@type":"Question","name":"Do you do valuation for sale and purchase of machinery?","acceptedAnswer":{"@type":"Answer","text":"Yes. Plant and machinery valuation for sale and purchase is available."}},{"@type":"Question","name":"Do you accept assignments outside Punjab?","acceptedAnswer":{"@type":"Answer","text":"Enquiries from other locations in India are welcome. The feasibility, inspection requirements, scope and terms will be considered individually."}},{"@type":"Question","name":"How do I get in touch?","acceptedAnswer":{"@type":"Answer","text":"Call 9465353872, send a WhatsApp message, or submit the enquiry form below."}}]}</script>{% endraw %}{% include tracking.html %}</head><body><!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NC4MBZ56" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
 
@@ -461,74 +461,7 @@ title: Home
 <style>.asg-date{color:#07818b;font-size:13px;font-weight:700;margin:6px 0 0}</style>
 {% endif %}
 
-{% assign books = site.data.books %}{% if books.size > 0 %}
-<section id="books" class="book-section">
-    <div class="emp-container">
-        <div class="emp-heading">
-            <span class="emp-kicker">PUBLICATIONS</span>
-            <h2>Books by Er. Chandan Goyal</h2>
-            <p>Reference and exam-preparation books for registered valuers and valuation professionals.</p>
-        </div>
-        <div class="scrollbox"><div class="book-grid">
-        {% for b in books %}
-            {% assign mrp = b.mrp | plus: 0 %}{% assign disc = b.discount | plus: 0 %}
-            {% if b.net_price and b.net_price != "" %}{% assign net = b.net_price | plus: 0 %}{% else %}{% assign off = mrp | times: disc | divided_by: 100.0 %}{% assign net = mrp | minus: off | round %}{% endif %}
-            <div class="book-card">
-                <div class="book-cover">{% if b.cover and b.cover != "" %}<img src="/{{ b.cover }}" alt="Cover of {{ b.title }}" loading="lazy">{% else %}<span aria-hidden="true">📘</span>{% endif %}</div>
-                <div class="book-body">
-                    <h3>{{ b.title }}</h3>
-                    {% if b.subtitle and b.subtitle != "" %}<p class="book-sub">{{ b.subtitle }}{% if b.volume and b.volume != "" %} · {{ b.volume }}{% endif %}</p>{% elsif b.volume and b.volume != "" %}<p class="book-sub">{{ b.volume }}</p>{% endif %}
-                    <p class="book-desc">{{ b.description }}</p>
-                    {% if b.chapters and b.chapters.size > 0 %}
-                    <details class="book-toc"><summary>Contents ({{ b.chapters.size }} chapters)</summary>
-                        <table><thead><tr><th>#</th><th>Chapter</th><th>Weightage</th></tr></thead><tbody>
-                        {% for c in b.chapters %}<tr><td>{{ forloop.index }}</td><td>{{ c.name }}</td><td>{{ c.weightage }}</td></tr>{% endfor %}
-                        </tbody></table>
-                    </details>
-                    {% endif %}
-                    <div class="book-price">
-                    {% if mrp > 0 %}
-                        {% if disc > 0 or net < mrp %}<span class="mrp">MRP ₹{{ mrp }}</span><span class="disc">{{ disc }}% off</span>{% endif %}
-                        <span class="net">₹{{ net }}</span>{% if disc > 0 or net < mrp %}<span class="net-l">Net price</span>{% else %}<span class="net-l">MRP</span>{% endif %}
-                    {% else %}<span class="net-l">Price on request</span>{% endif %}
-                    </div>
-                    {% if b.available %}<a class="btn book-btn" target="_blank" rel="noopener" href="https://wa.me/919465353872?text={{ 'I would like to buy the book: ' | append: b.title | url_encode }}">Buy on WhatsApp</a>{% else %}<span class="book-soon">Coming soon</span>{% endif %}
-                </div>
-            </div>
-        {% endfor %}
-        </div></div>
-        <p class="scroll-hint" hidden>Scroll inside the box to see all {{ books.size }} books ↓</p>
-        <p class="book-note">Payment by UPI is shown below. Please send the payment screenshot and your delivery address on WhatsApp.</p>
-    </div>
-</section>
-<style>
-.book-section{padding:70px 5%;background:#f4f8fa;font-family:Arial,sans-serif}
-.book-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
-.book-card{display:flex;gap:18px;background:#fff;border:1px solid #dce7e9;border-radius:13px;padding:20px;border-left:5px solid #087f8c}
-.book-cover{flex:0 0 96px;height:132px;border-radius:8px;background:#e9f5f5;display:flex;align-items:center;justify-content:center;font-size:46px;overflow:hidden}
-.book-cover img{width:100%;height:100%;object-fit:cover}
-.book-body{flex:1;min-width:0}
-.book-body h3{color:#073b4c;font-size:18px;line-height:1.35;margin:0 0 4px}
-.book-sub{color:#07818b;font-size:13px;font-weight:700;margin:0 0 8px}
-.book-desc{color:#60737a;font-size:14px;line-height:1.65;margin:0 0 12px}
-.book-toc{margin:0 0 12px;border:1px solid #dce7e9;border-radius:8px;background:#f8fbfb}
-.book-toc summary{cursor:pointer;color:#087f8c;font-weight:700;font-size:14px;padding:8px 12px}
-.book-toc table{width:100%;border-collapse:collapse;font-size:13px}
-.book-toc th,.book-toc td{text-align:left;padding:6px 10px;border-top:1px solid #e3ecee;color:#344d56;white-space:normal}
-.book-toc th{color:#073b4c;background:#eef6f6}
-.book-toc td:first-child,.book-toc th:first-child{width:28px}
-.book-toc td:last-child,.book-toc th:last-child{white-space:nowrap}
-.book-price{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px;margin-bottom:12px}
-.book-price .mrp{color:#888;text-decoration:line-through;font-size:14px}
-.book-price .disc{background:#d2a34a;color:#fff;font-size:12px;font-weight:700;padding:2px 8px;border-radius:20px}
-.book-price .net{color:#073b4c;font-size:22px;font-weight:800}
-.book-price .net-l{color:#60737a;font-size:13px}
-.book-btn{display:inline-block;font-size:14px;padding:9px 16px}
-.book-soon{display:inline-block;color:#60737a;font-size:13px;font-weight:700;border:1px dashed #b9c9cc;border-radius:8px;padding:7px 12px}
-.book-note{text-align:center;color:#60737a;font-size:14px;margin:18px 0 0}
-@media (max-width:580px){.book-section{padding:48px 5%}.book-card{flex-direction:column}.book-cover{flex-basis:auto;width:96px}}
-</style>
-{% endif %}
+
 
 {% assign tm = site.data.testimonials %}{% if tm.size > 0 %}
 <section id="testimonials" style="background:var(--light)"><h2 class="section-title">Client Testimonials</h2><div class="grid container">
@@ -586,6 +519,55 @@ title: Home
     </iframe>
 </div>
 </section>
+
+{% assign books = site.data.books %}{% if books.size > 0 %}
+<section id="books" class="bk-section">
+    <h2 class="bk-title">Books by Er. Chandan Goyal</h2>
+    <p class="bk-intro">IBBI Valuation Exam Guide series for registered valuer aspirants. Securities or Financial Assets series co-authored with CA Amit Garg.</p>
+    <div class="scrollbox bk-scroll">
+    {% assign groups = books | group_by: "series" %}
+    {% for g in groups %}
+        {% if g.name and g.name != "" %}<h3 class="bk-series">{{ g.name }}</h3>{% endif %}
+        <div class="bk-grid">
+        {% for b in g.items %}
+            {% assign mrp = b.mrp | plus: 0 %}{% assign disc = b.discount | plus: 0 %}
+            {% if b.net_price and b.net_price != "" %}{% assign net = b.net_price | plus: 0 %}{% else %}{% assign off = mrp | times: disc | divided_by: 100.0 %}{% assign net = mrp | minus: off | round %}{% endif %}
+            {% if mrp >= 1000 %}{% assign mrp_s = mrp | divided_by: 1000 | append: "," %}{% assign r = mrp | modulo: 1000 | prepend: "00" | slice: -3, 3 %}{% assign mrp_s = mrp_s | append: r %}{% else %}{% assign mrp_s = mrp %}{% endif %}
+            {% if net >= 1000 %}{% assign net_s = net | divided_by: 1000 | append: "," %}{% assign r = net | modulo: 1000 | prepend: "00" | slice: -3, 3 %}{% assign net_s = net_s | append: r %}{% else %}{% assign net_s = net %}{% endif %}
+            {% capture fullname %}{{ b.title }}{% if b.subtitle and b.subtitle != "" %} – {{ b.subtitle }}{% endif %}{% if b.volume and b.volume != "" %} ({{ b.volume }}){% endif %}{% endcapture %}
+            <div class="bk-card">
+                <div class="bk-name">{{ b.subtitle }}{% if b.volume and b.volume != "" %} <span>· {{ b.volume }}</span>{% endif %}</div>
+                {% if b.authors and b.authors != "" %}<div class="bk-auth">{{ b.authors }}</div>{% endif %}
+                <div class="bk-foot">
+                    <span class="bk-price">{% if mrp > 0 %}{% if disc > 0 or net < mrp %}<s>₹{{ mrp_s }}</s> {% endif %}<b>₹{{ net_s }}</b>{% else %}Price on request{% endif %}</span>
+                    {% if b.available %}<a class="bk-buy" target="_blank" rel="noopener" href="https://wa.me/919465353872?text={{ 'I would like to buy the book: ' | append: fullname | strip | url_encode }}">Buy</a>{% else %}<span class="bk-soon">Soon</span>{% endif %}
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    {% endfor %}
+    </div>
+    <p class="scroll-hint" hidden>Scroll inside the box to see all {{ books.size }} books ↓</p>
+</section>
+<style>
+.bk-section{padding:40px 5%;background:#f4f8fa;font-family:Arial,sans-serif;max-width:1200px;margin:0 auto}
+.bk-title{color:#073b4c;font-size:22px;text-align:center;margin:0 0 6px}
+.bk-intro{color:#60737a;font-size:14px;text-align:center;margin:0 0 18px}
+.bk-scroll{max-height:330px}
+.bk-series{color:#073b4c;font-size:14px;font-weight:700;margin:4px 0 8px;text-transform:uppercase;letter-spacing:.5px}
+.bk-grid+.bk-series{margin-top:16px}
+.bk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.bk-card{background:#fff;border:1px solid #dce7e9;border-radius:9px;padding:10px 12px;display:flex;flex-direction:column;gap:3px}
+.bk-name{color:#073b4c;font-size:13px;font-weight:700;line-height:1.35}
+.bk-name span{color:#07818b;font-weight:600}
+.bk-auth{color:#60737a;font-size:12px}
+.bk-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:6px}
+.bk-price{font-size:13px;color:#344d56}.bk-price s{color:#999}.bk-price b{color:#073b4c;font-size:15px}
+.bk-buy{background:#087f8c;color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:6px;text-decoration:none}
+.bk-soon{color:#60737a;font-size:12px}
+@media (max-width:580px){.bk-section{padding:32px 5%}.bk-scroll{max-height:300px}}
+</style>
+{% endif %}
 
 <section id="payment" style="text-align:center; background:#eef7f7;">
     <h2 class="section-title">Book Purchase &amp; Payments</h2>
