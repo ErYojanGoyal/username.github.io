@@ -77,7 +77,7 @@ title: Home
             <p>Empanelled as a Plant &amp; Machinery valuer with the following
             {% if emp.size == 1 %}institution{% else %}{{ emp.size }} institutions{% endif %}.</p>
         </div>
-        <div class="scrollbox"><div class="emp-grid">
+        <div class="morebox" data-item=".emp-card" data-show="4" data-show-m="2"><div class="emp-grid">
         {% for e in emp %}
             <div class="emp-card">
                 <div class="emp-top">
@@ -94,14 +94,14 @@ title: Home
             </div>
         {% endfor %}
         </div></div>
-        <p class="scroll-hint" hidden>Scroll inside the box to see all {{ emp.size }} empanelments ↓</p>
+        <p class="more-wrap" hidden><button type="button" class="more-btn" data-total="{{ emp.size }}" data-label="empanelments">View all {{ emp.size }} empanelments ▾</button></p>
     </div>
 </section>
 <style>
-.scrollbox{max-height:560px;overflow-y:auto;padding:4px 10px 4px 2px;scrollbar-width:thin;scrollbar-color:#087f8c #e9f5f5;overscroll-behavior:contain}
-.scrollbox::-webkit-scrollbar{width:8px}.scrollbox::-webkit-scrollbar-thumb{background:#087f8c;border-radius:8px}.scrollbox::-webkit-scrollbar-track{background:#e9f5f5;border-radius:8px}
-.scroll-hint{text-align:center;color:#07818b;font-size:14px;font-weight:700;margin:14px 0 0}
-@media (max-width:580px){.scrollbox{max-height:480px}}
+.more-wrap{text-align:center;margin:18px 0 0}
+.more-btn{background:#fff;color:#07818b;border:2px solid #087f8c;border-radius:24px;padding:9px 22px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
+.more-btn:hover{background:#087f8c;color:#fff}
+.morebox .is-extra{display:none}
 .emp-section{padding:70px 5%;background:#fff;font-family:Arial,sans-serif}
 .emp-container{max-width:1200px;margin:auto}
 .emp-heading{max-width:780px;margin:0 auto 40px;text-align:center}
@@ -446,7 +446,7 @@ title: Home
 {% assign asg = site.data.assignments %}{% if asg.size > 0 %}
 <section id="assignments">
     <h2 class="section-title">Recent Assignments</h2>
-    <div class="scrollbox" style="max-width:1200px;margin:0 auto"><div class="grid">
+    <div class="morebox" data-item=".assignment-card" data-show="6" data-show-m="3" style="max-width:1200px;margin:0 auto"><div class="grid">
     {% for a in asg %}
         <div class="assignment-card">
             {% if a.tag and a.tag != "" %}<span class="tag">{{ a.tag }}</span>{% endif %}
@@ -456,7 +456,7 @@ title: Home
         </div>
     {% endfor %}
     </div></div>
-    <p class="scroll-hint" hidden>Scroll inside the box to see all {{ asg.size }} assignments ↓</p>
+    <p class="more-wrap" hidden><button type="button" class="more-btn" data-total="{{ asg.size }}" data-label="assignments">View all {{ asg.size }} assignments ▾</button></p>
 </section>
 <style>.asg-date{color:#07818b;font-size:13px;font-weight:700;margin:6px 0 0}</style>
 {% endif %}
@@ -524,7 +524,7 @@ title: Home
 <section id="books" class="bk-section">
     <h2 class="bk-title">Books by Er. Chandan Goyal</h2>
     <p class="bk-intro">IBBI Valuation Exam Guide series for registered valuer aspirants. Securities or Financial Assets series co-authored with CA Amit Garg.</p>
-    <div class="scrollbox bk-scroll">
+    <div class="morebox" data-item=".bk-card" data-show="4" data-show-m="2">
     {% assign groups = books | group_by: "series" %}
     {% for g in groups %}
         {% if g.name and g.name != "" %}<h3 class="bk-series">{{ g.name }}</h3>{% endif %}
@@ -547,13 +547,12 @@ title: Home
         </div>
     {% endfor %}
     </div>
-    <p class="scroll-hint" hidden>Scroll inside the box to see all {{ books.size }} books ↓</p>
+    <p class="more-wrap" hidden><button type="button" class="more-btn" data-total="{{ books.size }}" data-label="books">View all {{ books.size }} books ▾</button></p>
 </section>
 <style>
 .bk-section{padding:40px 5%;background:#f4f8fa;font-family:Arial,sans-serif;max-width:1200px;margin:0 auto}
 .bk-title{color:#073b4c;font-size:22px;text-align:center;margin:0 0 6px}
 .bk-intro{color:#60737a;font-size:14px;text-align:center;margin:0 0 18px}
-.bk-scroll{max-height:330px}
 .bk-series{color:#073b4c;font-size:14px;font-weight:700;margin:4px 0 8px;text-transform:uppercase;letter-spacing:.5px}
 .bk-grid+.bk-series{margin-top:16px}
 .bk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
@@ -565,7 +564,7 @@ title: Home
 .bk-price{font-size:13px;color:#344d56}.bk-price s{color:#999}.bk-price b{color:#073b4c;font-size:15px}
 .bk-buy{background:#087f8c;color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:6px;text-decoration:none}
 .bk-soon{color:#60737a;font-size:12px}
-@media (max-width:580px){.bk-section{padding:32px 5%}.bk-scroll{max-height:300px}}
+@media (max-width:580px){.bk-section{padding:32px 5%}}
 </style>
 {% endif %}
 
@@ -585,8 +584,13 @@ document.querySelector('#enquiry form').addEventListener('submit',function(e){e.
 fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}}).then(function(r){return r.json()}).then(function(d){if(d.success){location.href='/thank-you/'}else{throw 0}}).catch(function(){f.submit()});});
 </script>
 <script>
-(function(){function chk(){document.querySelectorAll('.scrollbox').forEach(function(b){var h=b.parentNode.querySelector('.scroll-hint');if(!h)return;var more=b.scrollHeight>b.clientHeight+4&&b.scrollTop+b.clientHeight<b.scrollHeight-4;h.hidden=!more})}
-document.querySelectorAll('.scrollbox').forEach(function(b){b.addEventListener('scroll',chk,{passive:true})});window.addEventListener('resize',chk);window.addEventListener('load',chk);chk()})();
+(function(){
+function setup(box){var sel=box.getAttribute('data-item'),items=[].slice.call(box.querySelectorAll(sel)),wrap=box.parentNode.querySelector('.more-wrap');if(!wrap)return;var btn=wrap.querySelector('.more-btn'),open=false;
+function apply(){var n=window.innerWidth<=580?+box.getAttribute('data-show-m'):+box.getAttribute('data-show');items.forEach(function(it,i){it.classList.toggle('is-extra',!open&&i>=n)});
+box.querySelectorAll('.bk-series').forEach(function(h){var g=h.nextElementSibling;h.classList.toggle('is-extra',!!g&&!g.querySelector(sel+':not(.is-extra)'))});
+wrap.hidden=items.length<=n;btn.textContent=open?'Show less ▴':'View all '+btn.getAttribute('data-total')+' '+btn.getAttribute('data-label')+' ▾'}
+btn.addEventListener('click',function(){open=!open;apply();if(!open)box.scrollIntoView({block:'start',behavior:'smooth'})});window.addEventListener('resize',apply);apply()}
+document.querySelectorAll('.morebox').forEach(setup)})();
 </script>
 </body>
 </html>
