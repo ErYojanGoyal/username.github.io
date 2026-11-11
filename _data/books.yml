@@ -1,38 +1,217 @@
 # ------------------------------------------------------------------
-# BOOKS shown on the home page (section "Books by Er. Chandan Goyal").
+# BOOKS shown on the home page (section "Books").
+#
+# Books are grouped on the website by "series" (books with exactly the
+# same series text appear together, in the order listed here).
 #
 # To add a book: copy one block (from "- title:" to "available:"), paste
-# it below the others and change the details. To change a price, just
-# edit the numbers. Keep the two spaces at the start of each line.
+# it in the right place and change the details. To change a price, just
+# edit the numbers. Keep the spaces at the start of each line exactly.
 #
-#   title:       Book title (required)
-#   subtitle:    (optional) Edition / volume / asset class
+#   series:      Group heading, e.g. "Land & Building and Plant & Machinery"
+#   title:       Book title
+#   subtitle:    Asset class / type of book
+#   volume:      e.g. "Volume – 1" (leave "" if none)
+#   authors:     Author line shown on the card
 #   description: Two or three sentences about the book
-#   mrp:         MRP in rupees, numbers only, e.g. 650  (leave "" to show
-#                "Price on request")
-#   discount:    Discount in percent, numbers only, e.g. 20  (0 = no discount)
-#   net_price:   (optional) Leave "" and the website calculates
-#                MRP minus discount automatically. Fill it only if you want
-#                to show a different, exact price.
-#   cover:       (optional) Image file name in the website folder, e.g.
-#                book1-cover.jpg - leave "" for a plain book icon
-#   available:   yes = shows "Buy on WhatsApp" button; no = "Coming soon"
+#   chapters:    List of chapters/topics; each has "name" and, optionally,
+#                "weightage" (e.g. "3 Marks"). Shown in a fold-out list.
+#   mrp:         MRP in rupees, numbers only
+#   discount:    Discount in percent, numbers only (0 = none)
+#   net_price:   Leave "" and the website calculates MRP minus discount
+#   cover:       (optional) cover image file name, e.g. book1-cover.jpg
+#   available:   yes = "Buy on WhatsApp" button; no = "Coming soon"
 # ------------------------------------------------------------------
 
-- title: "Valuation Exam Preparation Book – Volume 1"
-  subtitle: "For Registered Valuer aspirants"
-  description: "A structured guide for the valuation examination for registered valuers, covering the common syllabus with concise notes and practice questions."
-  mrp: ""
-  discount: 0
+# ===================== LAND & BUILDING AND PLANT & MACHINERY =====================
+
+- series: "Land & Building and Plant & Machinery"
+  title: "IBBI Valuation Exam Guide"
+  subtitle: "Land & Building and Plant & Machinery Asset Classes"
+  volume: "Volume – 1"
+  authors: "Er. Chandan Goyal"
+  description: "Covers the common subjects of the valuation examination for both the Land & Building and Plant & Machinery asset classes, chapter by chapter in line with the examination weightage."
+  chapters:
+    - name: "Principles of Economics – Microeconomics"
+      weightage: "3 Marks"
+    - name: "Principles of Economics – Macroeconomics"
+      weightage: "3 Marks"
+    - name: "Book-keeping and Accountancy"
+      weightage: "3 Marks"
+    - name: "General Laws"
+      weightage: "7 Marks"
+    - name: "Introduction to Statistics"
+      weightage: "2 Marks"
+    - name: "Environmental Issues in Valuation"
+      weightage: "3 Marks"
+    - name: "Professional/Business Ethics and Standards"
+      weightage: "3 Marks"
+  mrp: 2500
+  discount: 60
   net_price: ""
   cover: ""
   available: yes
 
-- title: "Plant & Machinery Valuation Guide – Volume 2"
-  subtitle: "Plant & Machinery asset class"
-  description: "A practical guide to plant and machinery valuation, covering approaches, depreciation and obsolescence, and worked examples for the P&M asset class examination and practice."
-  mrp: ""
-  discount: 0
+- series: "Land & Building and Plant & Machinery"
+  title: "IBBI Valuation Exam Guide"
+  subtitle: "Plant & Machinery Asset Class"
+  volume: "Volume – 2"
+  authors: "Er. Chandan Goyal"
+  description: "Focused on the Plant & Machinery subjects that carry the highest weightage in the examination, including valuation of plant and machinery, industrial processes, insurance and loss assessment, report writing and key case laws."
+  chapters:
+    - name: "Law – Plant and Machinery"
+      weightage: "2 Marks"
+    - name: "Valuation of Plant and Machinery"
+      weightage: "31 Marks"
+    - name: "Machine Tools, Factory, Utility Equipment and Electrical Installations"
+      weightage: "2 Marks"
+    - name: "Industrial Processes"
+      weightage: "6 Marks"
+    - name: "Principles of Insurance and Loss Assessment"
+      weightage: "3 Marks"
+    - name: "Report Writing"
+      weightage: "3 Marks"
+    - name: "Important Case Laws on Principles of Valuation of Plant and Machinery"
+      weightage: "1 Mark"
+  mrp: 2500
+  discount: 60
+  net_price: ""
+  cover: ""
+  available: yes
+
+- series: "Land & Building and Plant & Machinery"
+  title: "IBBI Valuation Exam Guide"
+  subtitle: "Land & Building Asset Class"
+  volume: "Volume – 3"
+  authors: "Er. Chandan Goyal"
+  description: "Covers the laws related to real estate, valuation of real estate, and report writing with important case laws for the Land & Building asset class."
+  chapters:
+    - name: "Laws Related to Real Estate"
+    - name: "Valuation of Real Estate"
+    - name: "Report Writing & Important Case Laws"
+  mrp: 2500
+  discount: 60
+  net_price: ""
+  cover: ""
+  available: yes
+
+- series: "Land & Building and Plant & Machinery"
+  title: "IBBI Valuation Exam Guide"
+  subtitle: "Land & Building Asset Class"
+  volume: "Volume – 4"
+  authors: "Er. Chandan Goyal"
+  description: "Explains the income, market and cost approaches, the various purposes of valuation, and principles of insurance and loss assessment, with question practice."
+  chapters:
+    - name: "Income, Market & Cost Approach"
+    - name: "Various Purposes of Valuation"
+    - name: "Principles of Insurance and Loss Assessment"
+    - name: "Question Practice"
+  mrp: 2500
+  discount: 60
+  net_price: ""
+  cover: ""
+  available: yes
+
+- series: "Land & Building and Plant & Machinery"
+  title: "IBBI Valuation Exam Guide"
+  subtitle: "Land & Building Asset Class – Case Studies & Mock Tests"
+  volume: "Volume – 5"
+  authors: "Er. Chandan Goyal"
+  description: "Exam practice for the Land & Building asset class with 120 case studies and 5 full mock tests."
+  chapters:
+    - name: "120 Case Studies"
+    - name: "5 Mock Tests"
+  mrp: 2500
+  discount: 20
+  net_price: ""
+  cover: ""
+  available: yes
+
+# ===================== SECURITIES OR FINANCIAL ASSETS =====================
+
+- series: "Securities or Financial Assets"
+  title: "IBBI Valuation Exam Guide"
+  subtitle: "Securities or Financial Assets"
+  volume: "Volume – 1"
+  authors: "Er. Chandan Goyal & CA Amit Garg"
+  description: "Builds the foundation for the Securities or Financial Assets examination: macroeconomics, finance and financial statement analysis, ethics and standards, and an overview of valuation approaches."
+  chapters:
+    - name: "Macroeconomics"
+    - name: "Finance and Financial Statement Analysis"
+    - name: "Professional/Business Ethics and Standards"
+    - name: "Overview of Valuation & Valuation Approaches"
+  mrp: 2500
+  discount: 60
+  net_price: ""
+  cover: ""
+  available: yes
+
+- series: "Securities or Financial Assets"
+  title: "IBBI Valuation Exam Guide"
+  subtitle: "Securities or Financial Assets – General Laws"
+  volume: "Volume – 2"
+  authors: "Er. Chandan Goyal & CA Amit Garg"
+  description: "Covers the general laws in the Securities or Financial Assets syllabus, from the Companies Act and the Insolvency and Bankruptcy Code to SEBI, RBI and FEMA regulations."
+  chapters:
+    - name: "The Companies Act, 2013"
+    - name: "The Transfer of Property Act, 1882"
+    - name: "The Indian Stamp Act, 1899"
+    - name: "The Income Tax Act, 1961"
+    - name: "The Insolvency and Bankruptcy Code, 2016"
+    - name: "SARFAESI Act, 2002"
+    - name: "SEBI Regulations"
+    - name: "Reserve Bank of India and Regulations under the Foreign Exchange Management Act, 1999"
+  mrp: 2500
+  discount: 60
+  net_price: ""
+  cover: ""
+  available: yes
+
+- series: "Securities or Financial Assets"
+  title: "IBBI Valuation Exam Guide"
+  subtitle: "Securities or Financial Assets"
+  volume: "Volume – 3"
+  authors: "Er. Chandan Goyal & CA Amit Garg"
+  description: "Covers financial reporting, valuation application, fixed income securities, intangible assets, situation-specific valuation and judicial pronouncements on valuation, including the IBBI-issued sample paper."
+  chapters:
+    - name: "Financial Reporting"
+    - name: "Valuation Application"
+    - name: "Fixed Income Securities"
+    - name: "Intangible Assets"
+    - name: "Situation-Specific Valuation"
+    - name: "Judicial Pronouncements on Valuation"
+    - name: "Includes IBBI-issued Sample Paper"
+  mrp: 2500
+  discount: 60
+  net_price: ""
+  cover: ""
+  available: yes
+
+- series: "Securities or Financial Assets"
+  title: "IBBI Valuation Exam Guide"
+  subtitle: "Securities or Financial Assets – Case Studies and Mock Tests"
+  volume: ""
+  authors: "Er. Chandan Goyal & CA Amit Garg"
+  description: "Exam practice for the Securities or Financial Assets asset class with 118 case studies, 4 mixed practice tests and 5 mock tests."
+  chapters:
+    - name: "118 Case Studies"
+    - name: "4 Mixed Practice Tests"
+    - name: "5 Mock Tests"
+  mrp: 2500
+  discount: 20
+  net_price: ""
+  cover: ""
+  available: yes
+
+- series: "Securities or Financial Assets"
+  title: "IBBI Valuation Exam Guide"
+  subtitle: "Securities or Financial Assets – MCQ"
+  volume: ""
+  authors: "Er. Chandan Goyal & CA Amit Garg"
+  description: "A question bank of multiple choice questions for practice and revision for the Securities or Financial Assets examination."
+  chapters: []
+  mrp: 2500
+  discount: 20
   net_price: ""
   cover: ""
   available: yes
