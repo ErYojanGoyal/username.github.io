@@ -6,14 +6,14 @@ title: Home
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">{% include tracking.html %}
 <title>Plant & Machinery Valuation | IBBI Registered Valuer Punjab</title><meta name="description" content="IBBI registered valuer for plant and machinery valuation in Punjab. Machinery value for sale, purchase, IBC, bank loans and insurance. Call 9465353872."><link rel="canonical" href="https://plantmachineryvaluation.in/">
 <meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#003366"><meta property="og:locale" content="en_IN"><meta property="og:site_name" content="Er. Chandan Goyal - IBBI Registered Valuer"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta property="og:title" content="Plant & Machinery Valuation | IBBI Registered Valuer Punjab"><meta property="og:description" content="IBBI registered valuer for plant and machinery valuation in Punjab. Machinery value for sale, purchase, IBC, bank loans and insurance. Call 9465353872."><meta property="og:url" content="https://plantmachineryvaluation.in/"><meta property="og:image" content="https://plantmachineryvaluation.in/Logo.png">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E⚙️%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png"><link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/style.css">{% raw %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://plantmachineryvaluation.in/#business","name":"Er. Chandan Goyal - IBBI Registered Valuer (Plant & Machinery)","alternateName":"Goyal Valuers","url":"https://plantmachineryvaluation.in/","logo":"https://plantmachineryvaluation.in/Logo.png","image":"https://plantmachineryvaluation.in/Logo.png","telephone":"+91-9465353872","identifier":"IBBI/RV/06/2025/15844","address":{"@type":"PostalAddress","addressLocality":"Jagraon","addressRegion":"Punjab","addressCountry":"IN"},"areaServed":["Punjab","India"],"description":"IBBI registered valuer for plant and machinery valuation: IBC, bank loans, sale and purchase, insurance and financial reporting.","knowsAbout":["Plant and machinery valuation","Machinery value assessment","Valuation for sale and purchase","IBC fair value and liquidation value","Lender's Independent Engineer valuation"],"founder":{"@type":"Person","name":"Chandan Goyal","jobTitle":"IBBI Registered Valuer (Plant & Machinery)","identifier":"IBBI/RV/06/2025/15844"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Valuation services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Plant and machinery valuation for IBC","url":"https://plantmachineryvaluation.in/ibc-valuation/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Machinery valuation for sale and purchase","url":"https://plantmachineryvaluation.in/machinery-valuation-sale-purchase/"}}]}}</script>{% endraw %}
 {% raw %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a registered valuer?","acceptedAnswer":{"@type":"Answer","text":"A professional enrolled with IBBI for a specific asset class, authorised to carry out valuations required under the Companies Act and the Insolvency and Bankruptcy Code."}},{"@type":"Question","name":"When is plant and machinery valuation required?","acceptedAnswer":{"@type":"Answer","text":"Typically for insolvency and liquidation, bank lending and security, mergers and acquisitions, asset sale or purchase, insurance and financial reporting."}},{"@type":"Question","name":"How is machinery value determined?","acceptedAnswer":{"@type":"Answer","text":"By the machine's make, capacity, age, condition and market demand, usually using the cost approach cross-checked with market evidence."}},{"@type":"Question","name":"Do you do valuation for sale and purchase of machinery?","acceptedAnswer":{"@type":"Answer","text":"Yes. Plant and machinery valuation for sale and purchase is available."}},{"@type":"Question","name":"Do you accept assignments outside Punjab?","acceptedAnswer":{"@type":"Answer","text":"Enquiries from other locations in India are welcome. The feasibility, inspection requirements, scope and terms will be considered individually."}},{"@type":"Question","name":"How do I get in touch?","acceptedAnswer":{"@type":"Answer","text":"Call 9465353872, send a WhatsApp message, or submit the enquiry form below."}}]}</script>{% endraw %}{% include tracking.html %}</head><body><!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NC4MBZ56" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
 
 <a href="https://wa.me/919465353872" class="whatsapp-float" target="_blank" rel="noopener">WhatsApp</a>
 
 <header><a href="/"><img src="/Logo.png" alt="Er. Chandan Goyal IBBI Registered Valuer logo" class="logo"></a>
-<nav class="main-nav"><a href="/#services" class="nav-link">Services</a><a href="/articles.html" class="nav-link">Articles</a><a href="/reports.html" class="nav-link">Reports</a><a href="/#enquiry" class="btn">Enquire Now</a></nav></header>
+<nav class="main-nav"><a href="/#services" class="nav-link">Services</a><a href="/#empanelments" class="nav-link">Empanelments</a><a href="/#books" class="nav-link">Books</a><a href="/articles.html" class="nav-link">Articles</a><a href="/reports.html" class="nav-link">Reports</a><a href="/#enquiry" class="btn">Enquire Now</a></nav></header>
 
 <section class="hero">
     <div style="flex: 1; min-width: 300px; padding: 20px;">
@@ -67,7 +67,60 @@ title: Home
         </p>
     </div>
 </section>
-    
+
+{% assign emp = site.data.empanelments %}{% if emp.size > 0 %}
+<section id="empanelments" class="emp-section">
+    <div class="emp-container">
+        <div class="emp-heading">
+            <span class="emp-kicker">TRUSTED BY LENDERS</span>
+            <h2>Empanelments</h2>
+            <p>Empanelled as a Plant &amp; Machinery valuer with the following
+            {% if emp.size == 1 %}institution{% else %}{{ emp.size }} institutions{% endif %}.</p>
+        </div>
+        <div class="scrollbox"><div class="emp-grid">
+        {% for e in emp %}
+            <div class="emp-card">
+                <div class="emp-top">
+                    {% if e.logo and e.logo != "" %}<img src="/{{ e.logo }}" alt="{{ e.name }} logo" class="emp-logo" loading="lazy">{% else %}<span class="emp-icon" aria-hidden="true">🏦</span>{% endif %}
+                    {% if e.type and e.type != "" %}<span class="emp-tag">{{ e.type }}</span>{% endif %}
+                </div>
+                <h3>{{ e.name }}</h3>
+                <ul>
+                    {% if e.scope and e.scope != "" %}<li><strong>Scope:</strong> {{ e.scope }}</li>{% endif %}
+                    {% if e.location and e.location != "" %}<li><strong>Office:</strong> {{ e.location }}</li>{% endif %}
+                    {% if e.since and e.since != "" %}<li><strong>Empanelled since:</strong> {{ e.since }}</li>{% endif %}
+                    {% if e.ref and e.ref != "" %}<li><strong>Ref.:</strong> {{ e.ref }}</li>{% endif %}
+                </ul>
+            </div>
+        {% endfor %}
+        </div></div>
+        <p class="scroll-hint" hidden>Scroll inside the box to see all {{ emp.size }} empanelments ↓</p>
+    </div>
+</section>
+<style>
+.scrollbox{max-height:560px;overflow-y:auto;padding:4px 10px 4px 2px;scrollbar-width:thin;scrollbar-color:#087f8c #e9f5f5;overscroll-behavior:contain}
+.scrollbox::-webkit-scrollbar{width:8px}.scrollbox::-webkit-scrollbar-thumb{background:#087f8c;border-radius:8px}.scrollbox::-webkit-scrollbar-track{background:#e9f5f5;border-radius:8px}
+.scroll-hint{text-align:center;color:#07818b;font-size:14px;font-weight:700;margin:14px 0 0}
+@media (max-width:580px){.scrollbox{max-height:480px}}
+.emp-section{padding:70px 5%;background:#fff;font-family:Arial,sans-serif}
+.emp-container{max-width:1200px;margin:auto}
+.emp-heading{max-width:780px;margin:0 auto 40px;text-align:center}
+.emp-kicker{color:#07818b;font-size:13px;font-weight:800;letter-spacing:2px}
+.emp-heading h2{color:#073b4c;font-size:clamp(28px,4vw,40px);margin:12px 0}
+.emp-heading p{color:#60737a;font-size:16px;line-height:1.8;margin:0}
+.emp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.emp-card{background:#f4f8fa;padding:26px;border:1px solid #dce7e9;border-radius:13px;border-top:4px solid #d2a34a}
+.emp-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px}
+.emp-icon{width:46px;height:46px;border-radius:10px;background:#e9f5f5;display:flex;align-items:center;justify-content:center;font-size:24px}
+.emp-logo{max-height:46px;max-width:140px;object-fit:contain}
+.emp-tag{background:#073b4c;color:#fff;font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;white-space:nowrap}
+.emp-card h3{color:#073b4c;font-size:19px;line-height:1.4;margin:0 0 12px}
+.emp-card ul{list-style:none;padding:0;margin:0}
+.emp-card li{color:#344d56;font-size:14px;line-height:1.7;margin-bottom:4px}
+.emp-card li strong{color:#073b4c}
+@media (max-width:580px){.emp-section{padding:48px 5%}.emp-card{padding:22px}}
+</style>
+{% endif %}
 
 <section id="approach" class="approach-section">
     <div class="approach-container">
@@ -390,31 +443,78 @@ title: Home
 </div>
 </section>
     
+{% assign asg = site.data.assignments %}{% if asg.size > 0 %}
 <section id="assignments">
     <h2 class="section-title">Recent Assignments</h2>
-    <div class="grid">
+    <div class="scrollbox" style="max-width:1200px;margin:0 auto"><div class="grid">
+    {% for a in asg %}
         <div class="assignment-card">
-            <span class="tag">Energy</span>
-            <h3>Solar Power Plant</h3>
-            <p>Conducted comprehensive P&M valuation for a large-scale solar power plant for sale purpose.</p>
+            {% if a.tag and a.tag != "" %}<span class="tag">{{ a.tag }}</span>{% endif %}
+            <h3>{{ a.title }}</h3>
+            <p>{{ a.description }}</p>
+            {% if a.date and a.date != "" %}<p class="asg-date">{{ a.date }}</p>{% endif %}
         </div>
-        <div class="assignment-card">
-            <span class="tag">Insolvency (IBC)</span>
-            <h3>Spinning Unit</h3>
-            <p>Determined Fair and Liquidation Value for asset under liquidation</p>
-        </div>
-        <div class="assignment-card">
-            <span class="tag">Manufacturing</span>
-            <h3>Metal Industry</h3>
-            <p>Successfully completed the valuation of a casting industry unit for sale purposes, providing an independent assessment of its assets and market value.</p>
-        </div>
-         <div class="assignment-card">
-            <span class="tag">Banking</span>
-            <h3>Dyeing Industry</h3>
-            <p>Prepared a comprehensive Plant & Machinery Valuation Report for a textile dyeing unit to assist in the preparation of its Lender’s Independent Engineer (LIE) Report.</p>
-        </div>
-        </div>
+    {% endfor %}
+    </div></div>
+    <p class="scroll-hint" hidden>Scroll inside the box to see all {{ asg.size }} assignments ↓</p>
 </section>
+<style>.asg-date{color:#07818b;font-size:13px;font-weight:700;margin:6px 0 0}</style>
+{% endif %}
+
+{% assign books = site.data.books %}{% if books.size > 0 %}
+<section id="books" class="book-section">
+    <div class="emp-container">
+        <div class="emp-heading">
+            <span class="emp-kicker">PUBLICATIONS</span>
+            <h2>Books by Er. Chandan Goyal</h2>
+            <p>Reference and exam-preparation books for registered valuers and valuation professionals.</p>
+        </div>
+        <div class="scrollbox"><div class="book-grid">
+        {% for b in books %}
+            {% assign mrp = b.mrp | plus: 0 %}{% assign disc = b.discount | plus: 0 %}
+            {% if b.net_price and b.net_price != "" %}{% assign net = b.net_price | plus: 0 %}{% else %}{% assign off = mrp | times: disc | divided_by: 100.0 %}{% assign net = mrp | minus: off | round %}{% endif %}
+            <div class="book-card">
+                <div class="book-cover">{% if b.cover and b.cover != "" %}<img src="/{{ b.cover }}" alt="Cover of {{ b.title }}" loading="lazy">{% else %}<span aria-hidden="true">📘</span>{% endif %}</div>
+                <div class="book-body">
+                    <h3>{{ b.title }}</h3>
+                    {% if b.subtitle and b.subtitle != "" %}<p class="book-sub">{{ b.subtitle }}</p>{% endif %}
+                    <p class="book-desc">{{ b.description }}</p>
+                    <div class="book-price">
+                    {% if mrp > 0 %}
+                        {% if disc > 0 or net < mrp %}<span class="mrp">MRP ₹{{ mrp }}</span><span class="disc">{{ disc }}% off</span>{% endif %}
+                        <span class="net">₹{{ net }}</span>{% if disc > 0 or net < mrp %}<span class="net-l">Net price</span>{% else %}<span class="net-l">MRP</span>{% endif %}
+                    {% else %}<span class="net-l">Price on request</span>{% endif %}
+                    </div>
+                    {% if b.available %}<a class="btn book-btn" target="_blank" rel="noopener" href="https://wa.me/919465353872?text={{ 'I would like to buy the book: ' | append: b.title | url_encode }}">Buy on WhatsApp</a>{% else %}<span class="book-soon">Coming soon</span>{% endif %}
+                </div>
+            </div>
+        {% endfor %}
+        </div></div>
+        <p class="scroll-hint" hidden>Scroll inside the box to see all {{ books.size }} books ↓</p>
+        <p class="book-note">Payment by UPI is shown below. Please send the payment screenshot and your delivery address on WhatsApp.</p>
+    </div>
+</section>
+<style>
+.book-section{padding:70px 5%;background:#f4f8fa;font-family:Arial,sans-serif}
+.book-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.book-card{display:flex;gap:18px;background:#fff;border:1px solid #dce7e9;border-radius:13px;padding:20px;border-left:5px solid #087f8c}
+.book-cover{flex:0 0 96px;height:132px;border-radius:8px;background:#e9f5f5;display:flex;align-items:center;justify-content:center;font-size:46px;overflow:hidden}
+.book-cover img{width:100%;height:100%;object-fit:cover}
+.book-body{flex:1;min-width:0}
+.book-body h3{color:#073b4c;font-size:18px;line-height:1.35;margin:0 0 4px}
+.book-sub{color:#07818b;font-size:13px;font-weight:700;margin:0 0 8px}
+.book-desc{color:#60737a;font-size:14px;line-height:1.65;margin:0 0 12px}
+.book-price{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px;margin-bottom:12px}
+.book-price .mrp{color:#888;text-decoration:line-through;font-size:14px}
+.book-price .disc{background:#d2a34a;color:#fff;font-size:12px;font-weight:700;padding:2px 8px;border-radius:20px}
+.book-price .net{color:#073b4c;font-size:22px;font-weight:800}
+.book-price .net-l{color:#60737a;font-size:13px}
+.book-btn{display:inline-block;font-size:14px;padding:9px 16px}
+.book-soon{display:inline-block;color:#60737a;font-size:13px;font-weight:700;border:1px dashed #b9c9cc;border-radius:8px;padding:7px 12px}
+.book-note{text-align:center;color:#60737a;font-size:14px;margin:18px 0 0}
+@media (max-width:580px){.book-section{padding:48px 5%}.book-card{flex-direction:column}.book-cover{flex-basis:auto;width:96px}}
+</style>
+{% endif %}
 
 {% assign tm = site.data.testimonials %}{% if tm.size > 0 %}
 <section id="testimonials" style="background:var(--light)"><h2 class="section-title">Client Testimonials</h2><div class="grid container">
@@ -487,6 +587,10 @@ title: Home
 <script>
 document.querySelector('#enquiry form').addEventListener('submit',function(e){e.preventDefault();var f=this,b=f.querySelector('button[type=submit]');b.disabled=true;b.textContent='Sending...';
 fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}}).then(function(r){return r.json()}).then(function(d){if(d.success){location.href='/thank-you/'}else{throw 0}}).catch(function(){f.submit()});});
+</script>
+<script>
+(function(){function chk(){document.querySelectorAll('.scrollbox').forEach(function(b){var h=b.parentNode.querySelector('.scroll-hint');if(!h)return;var more=b.scrollHeight>b.clientHeight+4&&b.scrollTop+b.clientHeight<b.scrollHeight-4;h.hidden=!more})}
+document.querySelectorAll('.scrollbox').forEach(function(b){b.addEventListener('scroll',chk,{passive:true})});window.addEventListener('resize',chk);window.addEventListener('load',chk);chk()})();
 </script>
 </body>
 </html>
