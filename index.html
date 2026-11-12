@@ -39,7 +39,7 @@ title: Home
 <div class="assignment-card"><span class="tag">Insurance</span><h3>Insurance &amp; Reporting</h3><p>Reinstatement and market value assessments, and valuations for financial reporting.</p></div>
 </div><p style="text-align:center;margin-top:25px">Other asset classes (land &amp; building, securities) are handled through our collaborative professional network.</p></section>
 <section id="about" style="background: var(--light);">
-    <h2 class="section-title">Professional Profile &amp; Credentials</h2><div style="max-width:900px;margin:0 auto 20px;background:#fff;padding:20px 40px;border-radius:12px"><ul><li><strong>IBBI Registration No.:</strong> IBBI/RV/06/2025/15844</li><li><strong>Asset class:</strong> Plant &amp; Machinery</li><li><strong>Qualifications:</strong> Industrial Engineering; Master of Computer Applications (MCA)</li><li><strong>Experience:</strong> Food &amp; dairy, fastener and sheet metal industries; teaching; 3+ years in valuation</li><li><strong>Publications:</strong> Ten IBBI valuation exam books; ICAI valuer study material contribution</li></ul></div>
+    <h2 class="section-title">Professional Profile &amp; Credentials</h2><div style="max-width:900px;margin:0 auto 20px;background:#fff;padding:20px 40px;border-radius:12px"><ul><li><strong>IBBI Registration No.:</strong> IBBI/RV/06/2025/15844</li><li><strong>Asset class:</strong> Plant &amp; Machinery</li><li><strong>Qualifications:</strong> Industrial Engineering; Master of Computer Applications (MCA)</li><li><strong>Experience:</strong> Food &amp; dairy, fastener and sheet metal industries; teaching; 3+ years in valuation</li><li><strong>Publications:</strong> Seven IBBI valuation exam books; ICAI valuer study material contribution</li></ul></div>
     <div style="max-width: 900px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 12px;">
         <p>
         Chandan Goyal is a highly accomplished professional with a robust academic background in 
@@ -77,20 +77,11 @@ title: Home
             <p>Empanelled as a Plant &amp; Machinery valuer with the following
             {% if emp.size == 1 %}institution{% else %}{{ emp.size }} institutions{% endif %}.</p>
         </div>
-        <div class="morebox" data-item=".emp-card" data-show-m="2"><div class="emp-grid r5">
+        <div class="morebox emp-box" data-item=".emp-card" data-show-m="3"><div class="emp-grid r5">
         {% for e in emp %}
             <div class="emp-card">
-                <div class="emp-top">
-                    {% if e.logo and e.logo != "" %}<img src="/{{ e.logo }}" alt="{{ e.name }} logo" class="emp-logo" loading="lazy">{% else %}<span class="emp-icon" aria-hidden="true">🏦</span>{% endif %}
-                    {% if e.type and e.type != "" %}<span class="emp-tag">{{ e.type }}</span>{% endif %}
-                </div>
+                {% if e.logo and e.logo != "" %}<img src="/{{ e.logo }}" alt="{{ e.name }} logo" class="emp-logo" loading="lazy">{% else %}<span class="emp-icon" aria-hidden="true">🏦</span>{% endif %}
                 <h3>{{ e.name }}</h3>
-                <ul>
-                    {% if e.scope and e.scope != "" %}<li><strong>Scope:</strong> {{ e.scope }}</li>{% endif %}
-                    {% if e.location and e.location != "" %}<li><strong>Office:</strong> {{ e.location }}</li>{% endif %}
-                    {% if e.since and e.since != "" %}<li><strong>Empanelled since:</strong> {{ e.since }}</li>{% endif %}
-                    {% if e.ref and e.ref != "" %}<li><strong>Ref.:</strong> {{ e.ref }}</li>{% endif %}
-                </ul>
             </div>
         {% endfor %}
         </div></div>
@@ -105,12 +96,17 @@ title: Home
 .morebox{--cols:5;--gap:16px}
 .r5{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--gap)}
 .r5>*{flex:0 0 calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols));box-sizing:border-box;min-width:0;margin:0}
-.r5 .emp-card{padding:18px}.r5 .emp-card h3{font-size:16px}.r5 .emp-card li{font-size:13px;line-height:1.6}
 .r5 .assignment-card{padding:18px}.r5 .assignment-card h3{font-size:17px}.r5 .assignment-card p{font-size:14px}
 .r5-books{--gap:10px}
 @media (max-width:1100px){.morebox{--cols:3}}
 @media (max-width:760px){.morebox{--cols:2}}
 @media (max-width:520px){.morebox{--cols:1}.r5-books{--cols:2}}
+.emp-box{--cols:3;--gap:24px;max-width:1100px;margin:0 auto}
+.emp-box .emp-card{display:flex;align-items:center;gap:18px;min-height:120px;padding:26px 28px}
+.emp-box .emp-card h3{font-size:21px;line-height:1.4;margin:0}
+.emp-box .emp-icon,.emp-box .emp-logo{flex:0 0 auto;width:60px;height:60px;font-size:30px}
+@media (max-width:1100px){.emp-box{--cols:2}}
+@media (max-width:640px){.emp-box{--cols:1;--gap:14px}.emp-box .emp-card{min-height:0;padding:20px}.emp-box .emp-card h3{font-size:18px}.emp-box .emp-icon,.emp-box .emp-logo{width:48px;height:48px;font-size:24px}}
 .emp-section{padding:70px 5%;background:#fff;font-family:Arial,sans-serif}
 .emp-container{max-width:1200px;margin:auto}
 .emp-heading{max-width:780px;margin:0 auto 40px;text-align:center}
@@ -543,13 +539,26 @@ title: Home
             {% if mrp >= 1000 %}{% assign mrp_s = mrp | divided_by: 1000 | append: "," %}{% assign r = mrp | modulo: 1000 | prepend: "00" | slice: -3, 3 %}{% assign mrp_s = mrp_s | append: r %}{% else %}{% assign mrp_s = mrp %}{% endif %}
             {% if net >= 1000 %}{% assign net_s = net | divided_by: 1000 | append: "," %}{% assign r = net | modulo: 1000 | prepend: "00" | slice: -3, 3 %}{% assign net_s = net_s | append: r %}{% else %}{% assign net_s = net %}{% endif %}
             {% capture fullname %}{{ b.title }}{% if b.subtitle and b.subtitle != "" %} – {{ b.subtitle }}{% endif %}{% if b.volume and b.volume != "" %} ({{ b.volume }}){% endif %}{% endcapture %}
-            <div class="bk-card">
+            <div class="bk-card" role="button" tabindex="0" aria-haspopup="dialog" title="Click for book details">
                 <div class="bk-name">{{ b.subtitle }}{% if b.volume and b.volume != "" %} <span>· {{ b.volume }}</span>{% endif %}</div>
                 {% if b.authors and b.authors != "" %}<div class="bk-auth">{{ b.authors }}</div>{% endif %}
                 <div class="bk-foot">
                     <span class="bk-price">{% if mrp > 0 %}{% if disc > 0 or net < mrp %}<s>₹{{ mrp_s }}</s> {% endif %}<b>₹{{ net_s }}</b>{% else %}Price on request{% endif %}</span>
                     {% if b.available %}<a class="bk-buy" target="_blank" rel="noopener" href="https://wa.me/919465353872?text={{ 'I would like to buy the book: ' | append: fullname | strip | url_encode }}">Buy</a>{% else %}<span class="bk-soon">Soon</span>{% endif %}
                 </div>
+                <span class="bk-more">Details &amp; contents ›</span>
+                <template class="bk-detail">
+                    <p class="bkm-series">{{ b.title }}</p>
+                    <h3 id="bkm-title">{{ b.subtitle }}{% if b.volume and b.volume != "" %} <span>· {{ b.volume }}</span>{% endif %}</h3>
+                    {% if b.authors and b.authors != "" %}<p class="bkm-auth">By {{ b.authors }}</p>{% endif %}
+                    {% if b.description and b.description != "" %}<p class="bkm-desc">{{ b.description }}</p>{% endif %}
+                    {% if b.chapters and b.chapters.size > 0 %}<h4>Coverage</h4><ol class="bkm-list">{% for c in b.chapters %}<li><span>{{ c.name }}</span>{% if c.weightage and c.weightage != "" %}<em>{{ c.weightage }}</em>{% endif %}</li>{% endfor %}</ol>{% endif %}
+                    <div class="bkm-price">{% if mrp > 0 %}{% if disc > 0 or net < mrp %}<s>MRP ₹{{ mrp_s }}</s> {% endif %}<b>₹{{ net_s }}</b>{% if disc > 0 %} <i>{{ disc }}% off</i>{% endif %}{% else %}Price on request{% endif %}</div>
+                    <div class="bkm-actions">
+                        {% if b.available %}<a class="bkm-buy" target="_blank" rel="noopener" href="https://wa.me/919465353872?text={{ 'I would like to buy the book: ' | append: fullname | strip | url_encode }}">Buy on WhatsApp</a>{% else %}<span class="bk-soon">Coming soon</span>{% endif %}
+                        <button type="button" class="bkm-back" data-close>← Back to website</button>
+                    </div>
+                </template>
             </div>
         {% endfor %}
         </div>
@@ -557,6 +566,7 @@ title: Home
     </div>
     <p class="more-wrap" hidden><button type="button" class="more-btn" data-total="{{ books.size }}" data-label="books">View all {{ books.size }} books ▾</button></p>
 </section>
+<dialog id="bk-modal" aria-labelledby="bkm-title"><button type="button" class="bkm-x" data-close aria-label="Close">×</button><div class="bkm-body"></div></dialog>
 <style>
 .bk-section{padding:40px 5%;background:#f4f8fa;font-family:Arial,sans-serif;max-width:1200px;margin:0 auto}
 .bk-title{color:#073b4c;font-size:22px;text-align:center;margin:0 0 6px}
@@ -571,6 +581,26 @@ title: Home
 .bk-price{font-size:13px;color:#344d56}.bk-price s{color:#999}.bk-price b{color:#073b4c;font-size:15px}
 .bk-buy{background:#087f8c;color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:6px;text-decoration:none}
 .bk-soon{color:#60737a;font-size:12px}
+.bk-card{cursor:pointer;transition:box-shadow .2s,border-color .2s}
+.bk-card:hover,.bk-card:focus-visible{border-color:#087f8c;box-shadow:0 4px 14px rgba(7,59,76,.12);outline:none}
+.bk-more{color:#07818b;font-size:11.5px;font-weight:700;margin-top:4px}
+#bk-modal{border:0;border-radius:14px;padding:0;width:min(640px,94vw);max-height:88vh;box-shadow:0 20px 60px rgba(0,0,0,.3);font-family:Arial,sans-serif;color:#344d56}
+#bk-modal::backdrop{background:rgba(7,59,76,.55)}
+.bkm-body{padding:28px 30px 24px;overflow:auto;max-height:88vh;box-sizing:border-box}
+.bkm-x{position:absolute;top:8px;right:12px;background:none;border:0;font-size:30px;line-height:1;color:#60737a;cursor:pointer}
+.bkm-series{color:#07818b;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin:0 30px 6px 0}
+#bk-modal h3{color:#073b4c;font-size:22px;line-height:1.35;margin:0 30px 6px 0}#bk-modal h3 span{color:#07818b}
+.bkm-auth{font-size:14px;color:#60737a;margin:0 0 14px}
+.bkm-desc{font-size:15px;line-height:1.7;margin:0 0 16px}
+#bk-modal h4{color:#073b4c;font-size:15px;margin:0 0 8px;text-transform:uppercase;letter-spacing:.5px}
+.bkm-list{margin:0 0 18px;padding:0;list-style:none;counter-reset:bk;font-size:14.5px;line-height:1.5}
+.bkm-list li{display:flex;gap:10px;align-items:baseline;padding:6px 0;border-bottom:1px dashed #dce7e9;counter-increment:bk}.bkm-list li::before{content:counter(bk) ".";color:#07818b;font-weight:700;min-width:18px}.bkm-list li span{flex:1}
+.bkm-list li em{font-style:normal;font-size:12.5px;font-weight:700;color:#07818b;white-space:nowrap}
+.bkm-price{font-size:15px;margin:0 0 18px}.bkm-price s{color:#999}.bkm-price b{color:#073b4c;font-size:22px}.bkm-price i{font-style:normal;background:#e9f5f5;color:#07818b;font-weight:700;font-size:12.5px;padding:3px 8px;border-radius:12px}
+.bkm-actions{display:flex;flex-wrap:wrap;gap:10px;position:sticky;bottom:-24px;background:#fff;padding:12px 0 6px;border-top:1px solid #eef3f4}
+.bkm-buy{background:#25d366;color:#fff;font-weight:700;font-size:15px;padding:11px 20px;border-radius:8px;text-decoration:none}
+.bkm-back{background:#fff;color:#073b4c;border:2px solid #073b4c;font-weight:700;font-size:15px;padding:9px 18px;border-radius:8px;cursor:pointer;font-family:inherit}
+@media (max-width:520px){.bkm-body{padding:22px 18px 18px}.bkm-actions{bottom:-18px}#bk-modal h3{font-size:19px}.bkm-actions>*{flex:1 1 100%;text-align:center}}
 @media (max-width:580px){.bk-section{padding:32px 5%}}
 </style>
 {% endif %}
@@ -598,6 +628,13 @@ box.querySelectorAll('.bk-series').forEach(function(h){var g=h.nextElementSiblin
 wrap.hidden=items.length<=n;btn.textContent=open?'Show less ▴':'View all '+btn.getAttribute('data-total')+' '+btn.getAttribute('data-label')+' ▾'}
 btn.addEventListener('click',function(){open=!open;apply();if(!open)box.scrollIntoView({block:'start',behavior:'smooth'})});window.addEventListener('resize',apply);apply()}
 document.querySelectorAll('.morebox').forEach(setup)})();
+(function(){var m=document.getElementById('bk-modal');if(!m||!m.showModal)return;var body=m.querySelector('.bkm-body'),opened=false;
+function open(card){var t=card.querySelector('template.bk-detail');if(!t)return;body.innerHTML='';body.appendChild(t.content.cloneNode(true));body.scrollTop=0;m.showModal();opened=true;try{history.pushState({bk:1},'','#book')}catch(e){}}
+function close(fromPop){if(!m.open)return;m.close();if(opened&&!fromPop){opened=false;try{history.back()}catch(e){}}opened=false}
+document.querySelectorAll('.bk-card').forEach(function(c){c.addEventListener('click',function(e){if(e.target.closest('a'))return;open(c)});c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(c)}})});
+m.addEventListener('click',function(e){if(e.target===m||e.target.closest('[data-close]'))close()});
+m.addEventListener('cancel',function(e){e.preventDefault();close()});
+window.addEventListener('popstate',function(){if(m.open)close(true)});})();
 </script>
 </body>
 </html>
