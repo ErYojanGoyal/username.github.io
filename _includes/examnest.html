@@ -6,12 +6,14 @@
 
   <div class="ex-form" id="ex-form" data-discount="{{ ex.discount | default: 0 }}">
     <p class="ex-note">Prices are per asset class. Choose one or more asset classes and a duration.</p>
+    <div class="ex-cols">
     <fieldset class="ex-fs"><legend>1. Choose asset class</legend>
       {% for a in ex.asset_classes %}<label class="ex-opt"><input type="checkbox" name="ex-ac" value="{{ a | escape }}"{% if forloop.first %} checked{% endif %}> {{ a }}</label>{% endfor %}
     </fieldset>
     <fieldset class="ex-fs"><legend>2. Choose duration</legend>
       {% for p in ex.plans %}<label class="ex-opt"><input type="radio" name="ex-plan" value="{{ p.name | escape }}" data-price="{{ p.price }}"{% if forloop.first %} checked{% endif %}> <span>{{ p.name }}</span> <em class="ex-pp" data-price="{{ p.price }}">₹{{ p.price }} per asset class</em></label>{% endfor %}
     </fieldset>
+    </div>
     <div class="ex-total" id="ex-total" aria-live="polite"></div>
     <a class="ex-buy" id="ex-buy" target="_blank" rel="noopener" href="https://wa.me/919465353872?text=Hello%2C%20I%20would%20like%20to%20buy%20the%20ExamNest%20IBBI%20Valuation%20Test%20Series.">Buy on WhatsApp</a>
   </div>
@@ -23,7 +25,9 @@
 .ex-title{color:#073b4c;font-size:24px;margin:0 0 8px}
 .ex-sub{max-width:760px;margin:0 auto 20px;color:#444;line-height:1.5}
 .ex-poster{width:100%;max-width:1000px;height:auto;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,.12)}
-.ex-form{max-width:640px;margin:26px auto 0;text-align:left;border:2px solid #0b2a5b;border-radius:12px;padding:20px;background:#fffdf3}
+.ex-form{max-width:860px;margin:26px auto 0;text-align:left;border:2px solid #0b2a5b;border-radius:12px;padding:20px;background:#fffdf3}
+.ex-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+@media (max-width:700px){.ex-cols{grid-template-columns:1fr;gap:0}}
 .ex-note{margin:0 0 12px;color:#555;font-size:14px}
 .ex-fs{border:0;padding:0;margin:0 0 14px}
 .ex-fs legend{font-weight:700;color:#0b2a5b;margin-bottom:6px;padding:0}
