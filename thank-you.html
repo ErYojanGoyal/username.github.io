@@ -6,7 +6,13 @@ permalink: /thank-you/
 noindex: true
 sitemap: false
 ---
-{% if site.google_ads_id != blank and site.form_label != blank %}<script>if(typeof gtag==='function')gtag('event','conversion',{send_to:'{{ site.google_ads_id }}/{{ site.form_label }}'});</script>{% endif %}
+<!-- Google Ads: load tag and record the "Submit lead form" conversion (fires only on this page) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18562775429"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','AW-18562775429');
+gtag('event','conversion',{'send_to':'AW-18562775429/q09ICI6x2bwdEIXztZNF'});
+</script>
 <section style="text-align:center"><div class="container"><h1 class="section-title">Thank you for your enquiry</h1>
 <p>Your message has been received. We will contact you shortly.</p>
 <p>For urgent requirements, please call <a href="tel:+919465353872"><strong>9465353872</strong></a> or message us on <a href="https://wa.me/919465353872" target="_blank" rel="noopener">WhatsApp</a>.</p>
