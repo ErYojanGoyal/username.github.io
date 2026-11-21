@@ -1,0 +1,11 @@
+# ExamNest test series shown on the home page (section "ExamNest").
+# discount = percentage given to customers who order through the website on WhatsApp.
+discount: 15
+website: "https://classplusapp.com/w/examnest"
+plans:
+  - name: "3 Days"
+    price: 2000
+  - name: "15 Days"
+    price: 4000
+  - name: "3 Months"
+    price: 6000

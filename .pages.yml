@@ -87,6 +87,21 @@ content:
           - { name: description, label: Description, type: text }
           - { name: date, label: Date (optional), type: string }
 
+  - name: examnest
+    label: ExamNest test series
+    type: file
+    path: _data/examnest.yml
+    fields:
+      - { name: discount, label: Website discount (%), type: number }
+      - { name: website, label: ExamNest website link, type: string }
+      - name: plans
+        label: Plans
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Plan name (e.g. 3 Days), type: string }
+          - { name: price, label: Price (Rs), type: number }
+
   - name: articles
     label: Articles
     type: collection
