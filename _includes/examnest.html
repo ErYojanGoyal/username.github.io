@@ -1,24 +1,21 @@
 {% assign ex = site.data.examnest %}{% if ex and ex.plans.size > 0 %}
 <section id="examnest" class="ex-section">
   <h2 class="ex-title">ExamNest – IBBI Valuation Test Series</h2>
-  <p class="ex-sub">NISM-exam-like practice for all three asset classes: Plant &amp; Machinery, Land &amp; Building, and Securities or Financial Assets.{% if ex.discount > 0 %} <strong>Order on WhatsApp through this website and get {{ ex.discount }}% off.</strong>{% endif %}</p>
+  <p class="ex-sub">NISM-exam-like practice for each asset class: 80+ topic-wise tests, 100+ case studies and 5 mock tests.{% if ex.discount > 0 %} <strong>Order on WhatsApp through this website and get {{ ex.discount }}% off.</strong>{% endif %}</p>
   <img src="/examnest-poster.jpg" alt="ExamNest IBBI Valuation Test Series: 80+ topic-wise tests, 100+ case studies and 5 mock tests per asset class; plans of 3 days, 15 days and 3 months" class="ex-poster" width="1672" height="941" loading="lazy">
-  <div class="ex-plans">
-  {% for p in ex.plans %}
-    {% assign mrp = p.price | plus: 0 %}
-    {% assign disc = ex.discount | plus: 0 %}
-    {% assign pct = 100 | minus: disc %}{% assign net = mrp | times: pct | divided_by: 100 %}
-    {% if mrp >= 1000 %}{% assign mrp_s = mrp | divided_by: 1000 | append: "," | append: "" %}{% assign r = mrp | modulo: 1000 | prepend: "00" | slice: -3, 3 %}{% assign mrp_s = mrp_s | append: r %}{% else %}{% assign mrp_s = mrp %}{% endif %}
-    {% if net >= 1000 %}{% assign net_s = net | divided_by: 1000 | append: "," %}{% assign r2 = net | modulo: 1000 | prepend: "00" | slice: -3, 3 %}{% assign net_s = net_s | append: r2 %}{% else %}{% assign net_s = net %}{% endif %}
-    {% capture msg %}Hello, I would like to buy the ExamNest IBBI Valuation Test Series ({{ p.name }} plan, all three asset classes) with the {{ ex.discount }}% website discount.{% endcapture %}
-    <div class="ex-plan">
-      <div class="ex-plan-name">{{ p.name }}</div>
-      <div class="ex-price">{% if disc > 0 %}<s>₹{{ mrp_s }}</s> {% endif %}<b>₹{{ net_s }}</b></div>
-      {% if disc > 0 %}<div class="ex-off">{{ disc }}% website discount</div>{% endif %}
-      <a class="ex-buy" target="_blank" rel="noopener" href="https://wa.me/919465353872?text={{ msg | url_encode }}">Buy on WhatsApp</a>
-    </div>
-  {% endfor %}
+
+  <div class="ex-form" id="ex-form" data-discount="{{ ex.discount | default: 0 }}">
+    <p class="ex-note">Prices are per asset class. Choose one or more asset classes and a duration.</p>
+    <fieldset class="ex-fs"><legend>1. Choose asset class</legend>
+      {% for a in ex.asset_classes %}<label class="ex-opt"><input type="checkbox" name="ex-ac" value="{{ a | escape }}"{% if forloop.first %} checked{% endif %}> {{ a }}</label>{% endfor %}
+    </fieldset>
+    <fieldset class="ex-fs"><legend>2. Choose duration</legend>
+      {% for p in ex.plans %}<label class="ex-opt"><input type="radio" name="ex-plan" value="{{ p.name | escape }}" data-price="{{ p.price }}"{% if forloop.first %} checked{% endif %}> <span>{{ p.name }}</span> <em class="ex-pp" data-price="{{ p.price }}">₹{{ p.price }} per asset class</em></label>{% endfor %}
+    </fieldset>
+    <div class="ex-total" id="ex-total" aria-live="polite"></div>
+    <a class="ex-buy" id="ex-buy" target="_blank" rel="noopener" href="https://wa.me/919465353872?text=Hello%2C%20I%20would%20like%20to%20buy%20the%20ExamNest%20IBBI%20Valuation%20Test%20Series.">Buy on WhatsApp</a>
   </div>
+
   <p class="ex-links">Also available on <a href="{{ ex.website }}" target="_blank" rel="noopener">the ExamNest website</a> · Android: download the <strong>ExamNest</strong> app · iPhone: download the <strong>Classplus</strong> app, organisation code <strong>BYGUIT</strong>.</p>
 </section>
 <style>
@@ -26,13 +23,38 @@
 .ex-title{color:#073b4c;font-size:24px;margin:0 0 8px}
 .ex-sub{max-width:760px;margin:0 auto 20px;color:#444;line-height:1.5}
 .ex-poster{width:100%;max-width:1000px;height:auto;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,.12)}
-.ex-plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;max-width:900px;margin:24px auto 0}
-.ex-plan{border:2px solid #0b2a5b;border-radius:12px;padding:18px 12px;background:#fffdf3}
-.ex-plan-name{font-weight:700;font-size:18px;color:#0b2a5b}
-.ex-price{font-size:24px;margin:8px 0 2px}.ex-price s{color:#888;font-size:16px}
-.ex-off{color:#c2410c;font-weight:700;font-size:14px;margin-bottom:12px}
-.ex-buy{display:inline-block;background:#25d366;color:#fff;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:8px}
+.ex-form{max-width:640px;margin:26px auto 0;text-align:left;border:2px solid #0b2a5b;border-radius:12px;padding:20px;background:#fffdf3}
+.ex-note{margin:0 0 12px;color:#555;font-size:14px}
+.ex-fs{border:0;padding:0;margin:0 0 14px}
+.ex-fs legend{font-weight:700;color:#0b2a5b;margin-bottom:6px;padding:0}
+.ex-opt{display:block;padding:8px 10px;border:1px solid #d7dbe3;border-radius:8px;margin-bottom:6px;background:#fff;cursor:pointer}
+.ex-opt input{margin-right:8px}.ex-opt em{color:#666;font-style:normal;font-size:14px;margin-left:6px}
+.ex-total{font-size:20px;text-align:center;margin:12px 0;min-height:30px}
+.ex-total s{color:#888;font-size:16px}.ex-total .ex-off{display:block;color:#c2410c;font-weight:700;font-size:14px}
+.ex-buy{display:block;text-align:center;background:#25d366;color:#fff;text-decoration:none;font-weight:700;padding:12px 18px;border-radius:8px}
+.ex-buy.ex-disabled{background:#aab;pointer-events:none}
 .ex-links{margin:20px auto 0;max-width:800px;color:#555;font-size:14px;line-height:1.6}
-@media (max-width:580px){.ex-section{padding:32px 5%}.ex-title{font-size:20px}}
+@media (max-width:580px){.ex-section{padding:32px 5%}.ex-title{font-size:20px}.ex-form{padding:14px}}
 </style>
+<script>
+(function(){
+var f=document.getElementById('ex-form');if(!f)return;
+var disc=parseFloat(f.getAttribute('data-discount'))||0;
+var out=document.getElementById('ex-total'),buy=document.getElementById('ex-buy');
+function rs(n){try{return '₹'+Math.round(n).toLocaleString('en-IN')}catch(e){return '₹'+Math.round(n)}}
+function update(){
+  var acs=[].slice.call(f.querySelectorAll('input[name="ex-ac"]:checked')).map(function(i){return i.value});
+  var pl=f.querySelector('input[name="ex-plan"]:checked');
+  if(!acs.length||!pl){out.textContent='Please choose at least one asset class and a duration.';buy.classList.add('ex-disabled');return;}
+  buy.classList.remove('ex-disabled');
+  var mrp=parseFloat(pl.getAttribute('data-price'))*acs.length;
+  var net=Math.round(mrp*(100-disc)/100);
+  out.innerHTML=(disc>0?'<s>'+rs(mrp)+'</s> ':'')+'<b>'+rs(net)+'</b>'+(disc>0?'<span class="ex-off">'+disc+'% website discount applied</span>':'');
+  var msg='Hello, I would like to buy the ExamNest IBBI Valuation Test Series.\nAsset class: '+acs.join(', ')+'\nDuration: '+pl.value+'\nAmount: '+rs(net)+(disc>0?' (after '+disc+'% website discount)':'');
+  buy.href='https://wa.me/919465353872?text='+encodeURIComponent(msg);
+}
+[].forEach.call(f.querySelectorAll('.ex-pp'),function(e){var p=parseFloat(e.getAttribute('data-price'));e.textContent=(disc>0?rs(p*(100-disc)/100)+' (MRP '+rs(p)+')':rs(p))+' per asset class'});
+f.addEventListener('change',update);update();
+})();
+</script>
 {% endif %}

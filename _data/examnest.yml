@@ -1,7 +1,13 @@
 # ExamNest test series shown on the home page (section "ExamNest").
+# Prices below are PER ASSET CLASS. The customer picks the asset class(es) and a duration;
+# the website multiplies by the number of asset classes chosen.
 # discount = percentage given to customers who order through the website on WhatsApp.
 discount: 15
 website: "https://classplusapp.com/w/examnest"
+asset_classes:
+  - "Plant & Machinery"
+  - "Land & Building"
+  - "Securities or Financial Assets"
 plans:
   - name: "3 Days"
     price: 2000

@@ -94,6 +94,10 @@ content:
     fields:
       - { name: discount, label: Website discount (%), type: number }
       - { name: website, label: ExamNest website link, type: string }
+      - name: asset_classes
+        label: Asset classes (price is per asset class)
+        type: string
+        list: true
       - name: plans
         label: Plans
         type: object
