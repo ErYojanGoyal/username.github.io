@@ -1,0 +1,102 @@
+# Pages CMS configuration for plantmachineryvaluation.in
+media:
+  - name: images
+    label: Images (logos, book covers)
+    input: .
+    output: /
+    extensions: [png, jpg, jpeg, webp, svg]
+  - name: reports
+    label: Report files
+    input: assets/uploads
+    output: /assets/uploads
+
+content:
+  - name: books
+    label: Books
+    type: file
+    path: _data/books.yml
+    fields:
+      - name: items
+        label: Books
+        type: object
+        list: true
+        fields:
+          - { name: series, label: Group heading (books with identical text are grouped), type: string }
+          - { name: title, label: Book title, type: string }
+          - { name: subtitle, label: Subtitle / asset class, type: string }
+          - { name: volume, label: Volume (e.g. Volume – 1), type: string }
+          - { name: authors, label: Authors, type: string }
+          - { name: description, label: Description, type: text }
+          - name: chapters
+            label: Content coverage (chapters)
+            type: object
+            list: true
+            fields:
+              - { name: name, label: Chapter / topic, type: string }
+              - { name: weightage, label: Weightage (e.g. 3 Marks), type: string }
+          - { name: mrp, label: MRP (Rs), type: number }
+          - { name: discount, label: Discount (%), type: number }
+          - { name: net_price, label: Net price (leave blank to auto-calculate), type: string }
+          - { name: cover, label: Cover image file name (optional), type: string }
+          - { name: available, label: Available to buy (off = Coming soon), type: boolean }
+
+  - name: empanelments
+    label: Empanelments
+    type: file
+    path: _data/empanelments.yml
+    fields:
+      - name: items
+        label: Empanelments
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Institution name, type: string }
+          - { name: type, label: Type (e.g. Public Sector Bank), type: string }
+          - { name: location, label: Location, type: string }
+          - { name: scope, label: Scope, type: string }
+          - { name: since, label: Since (e.g. July 2026), type: string }
+          - { name: ref, label: Letter reference (optional), type: string }
+          - { name: logo, label: Logo file name (optional), type: string }
+
+  - name: testimonials
+    label: Testimonials
+    type: file
+    path: _data/testimonials.yml
+    fields:
+      - name: items
+        label: Testimonials
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Client name, type: string }
+          - { name: role, label: Company / location, type: string }
+          - { name: text, label: Testimonial, type: text }
+
+  - name: assignments
+    label: Assignments
+    type: file
+    path: _data/assignments.yml
+    fields:
+      - name: items
+        label: Assignments
+        type: object
+        list: true
+        fields:
+          - { name: tag, label: Category tag, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: description, label: Description, type: text }
+          - { name: date, label: Date (optional), type: string }
+
+  - name: articles
+    label: Articles
+    type: collection
+    path: _posts
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, date]
+      primary: title
+      sort: [date]
+    fields:
+      - { name: title, label: Title, type: string }
+      - { name: description, label: Short description (for Google), type: text }
+      - { name: body, label: Article, type: rich-text }

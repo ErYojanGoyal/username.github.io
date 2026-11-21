@@ -68,7 +68,7 @@ title: Home
     </div>
 </section>
 
-{% assign emp = site.data.empanelments %}{% if emp.size > 0 %}
+{% assign emp = site.data.empanelments.items %}{% if emp.size > 0 %}
 <section id="empanelments" class="emp-section">
     <div class="emp-container">
         <div class="emp-heading">
@@ -447,7 +447,7 @@ title: Home
 </div>
 </section>
     
-{% assign asg = site.data.assignments %}{% if asg.size > 0 %}
+{% assign asg = site.data.assignments.items %}{% if asg.size > 0 %}
 <section id="assignments">
     <h2 class="section-title">Recent Assignments</h2>
     <div class="morebox" data-item=".assignment-card" data-show-m="3" style="max-width:1200px;margin:0 auto"><div class="r5">
@@ -467,7 +467,7 @@ title: Home
 
 
 
-{% assign tm = site.data.testimonials %}{% if tm.size > 0 %}
+{% assign tm = site.data.testimonials.items %}{% if tm.size > 0 %}
 <section id="testimonials" style="background:var(--light)"><h2 class="section-title">Client Testimonials</h2><div class="grid container">
 {% for t in tm %}<blockquote class="card" style="margin:0"><p>“{{ t.text }}”</p><strong>– {{ t.name }}{% if t.role %}, {{ t.role }}{% endif %}</strong></blockquote>
 {% endfor %}</div></section>{% endif %}
@@ -524,7 +524,7 @@ title: Home
 </div>
 </section>
 
-{% assign books = site.data.books %}{% if books.size > 0 %}
+{% assign books = site.data.books.items %}{% if books.size > 0 %}
 <section id="books" class="bk-section">
     <h2 class="bk-title">Books by Er. Chandan Goyal</h2>
     <p class="bk-intro">IBBI Valuation Exam Guide series for registered valuer aspirants. Securities or Financial Assets series co-authored with CA Amit Garg.</p>
