@@ -3,7 +3,7 @@
 # the website multiplies by the number of asset classes chosen.
 # discount = percentage given to customers who order through the website on WhatsApp.
 discount: 15
-website: "https://classplusapp.com/w/examnest"
+website: "https://classplusapp.com/w/examnest/courses"
 asset_classes:
   - "Plant & Machinery"
   - "Land & Building"
